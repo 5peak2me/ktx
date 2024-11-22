@@ -5,7 +5,7 @@ plugins {
 
 android {
     namespace = "com.l3gacy.lib.ktx.android"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         minSdk = 24
