@@ -10,6 +10,10 @@ plugins {
 
 subprojects {
     if (name != "app") {
+        group = "com.github.l3gcay.ktx"
+
+        plugins.apply("maven-publish")
+
         tasks.withType<KotlinCompile> {
             kotlinOptions.jvmTarget = JavaVersion.VERSION_17.toString()
             kotlinOptions.freeCompilerArgs += listOf(
