@@ -10,7 +10,7 @@ plugins {
 
 subprojects {
     if (name != "app") {
-        group = "com.github.l3gcay.ktx"
+        group = "com.github.5peak2me.ktx"
 
         plugins.apply("maven-publish")
 
