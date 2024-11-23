@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.githb.l3gacy.ktx.android
+package com.github.l3gacy.ktx.android
 
 import android.content.res.Resources
 import android.graphics.Color
