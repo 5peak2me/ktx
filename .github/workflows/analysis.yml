@@ -15,5 +15,4 @@ jobs:
           java-version: '17'
       - name: Run spotless task
         uses: gradle/actions/setup-gradle@v4
-        with:
-          arguments: spotlessCheck --init-script gradle/init.gradle.kts --no-configuration-cache --scan --stacktrace
+        run: spotlessCheck --init-script gradle/init.gradle.kts --no-configuration-cache --scan --stacktrace

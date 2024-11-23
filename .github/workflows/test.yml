@@ -15,12 +15,11 @@ jobs:
         with:
           distribution: 'zulu'
           java-version: 17
+
       - name: Run unit tests
         uses: gradle/actions/setup-gradle@v4
-        with:
-          arguments: |
-            jacocoTestReport
-            --stacktrace
+        run: jacocoTestReport --stacktrace
+
       - name: Upload test results artifact
         uses: actions/upload-artifact@v4.4.3
         if: always()
