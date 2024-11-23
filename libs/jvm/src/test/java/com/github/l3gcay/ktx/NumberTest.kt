@@ -26,7 +26,7 @@ internal class NumberTest(private val input: Number?, private val expected: Numb
 
   @Test
   fun `test orZero`() {
-    assertEquals(expected, input.orZero())  // 验证 orZero 的返回值
+    assertEquals(expected, input.orZero()) // 验证 orZero 的返回值
   }
 
   companion object {
@@ -34,15 +34,15 @@ internal class NumberTest(private val input: Number?, private val expected: Numb
     @Parameterized.Parameters
     fun data(): List<Array<out Any?>> {
       return listOf(
-        arrayOf(1, 1),        // 非 null 的整数
-        arrayOf(0, 0),        // 非 null 的整数
-        arrayOf(-100, -100),  // 非 null 的负整数
-        arrayOf(null, 0),     // null 的整数
-        arrayOf(1.1f, 1.1f),  // 非 null 的浮点数
-        arrayOf(0.0f, 0f),    // 非 null 的浮点数
-        arrayOf(2.3, 2.3),    // 非 null 的双精度数
-        arrayOf(0.0, 0.0),    // 非 null 的双精度数
-        arrayOf(null, 0)      // null 的双精度数
+        arrayOf(1, 1),
+        arrayOf(0, 0),
+        arrayOf(-100, -100),
+        arrayOf(null, 0),
+        arrayOf(1.1f, 1.1f),
+        arrayOf(0.0f, 0f),
+        arrayOf(2.3, 2.3),
+        arrayOf(0.0, 0.0),
+        arrayOf(null, 0),
       )
     }
   }
