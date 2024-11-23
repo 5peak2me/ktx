@@ -3,6 +3,8 @@ plugins {
     alias(libs.plugins.jetbrainsKotlinAndroid)
 }
 
+version = "0.0.1"
+
 android {
     namespace = "com.gitub.l3gacy.ktx.android"
     compileSdk = 35
