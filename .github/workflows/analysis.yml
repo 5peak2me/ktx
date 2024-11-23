@@ -8,12 +8,12 @@ jobs:
     name: spotless
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3.5.0
-      - uses: actions/setup-java@v3
+      - uses: actions/checkout@v4.2.2
+      - uses: actions/setup-java@v4
         with:
           distribution: 'zulu'
           java-version: '17'
       - name: Run spotless task
-        uses: gradle/gradle-build-action@v2.4.2
+        uses: gradle/actions/setup-gradle@v4
         with:
           arguments: spotlessCheck --init-script gradle/init.gradle.kts --no-configuration-cache --scan --stacktrace
