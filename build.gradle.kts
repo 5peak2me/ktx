@@ -25,6 +25,16 @@ plugins {
   alias(libs.plugins.dokka)
 }
 
+allprojects {
+  subprojects.forEach {
+    if (it.subprojects.isNotEmpty()) {
+      tasks.dokkaHtmlMultiModule {
+        dependsOn(it.tasks.dokkaHtmlMultiModule)
+      }
+    }
+  }
+}
+
 subprojects {
   if (name != "app") {
     group = "com.github.5peak2me.ktx"
