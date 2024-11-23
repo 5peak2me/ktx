@@ -16,7 +16,7 @@ concurrency:
 
 jobs:
   analysis:
-    uses: analysis.yml
+    uses: .github/workflows/analysis.yml
 
   test:
     needs: [ analysis ]
