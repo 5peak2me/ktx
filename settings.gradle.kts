@@ -24,4 +24,5 @@ dependencyResolutionManagement {
 rootProject.name = "ktx"
 include(":app")
 include(":libs:jvm")
+include(":libs:gradle")
 include(":libs:android")
