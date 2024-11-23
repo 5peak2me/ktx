@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace = "com.l3gacy.lib.ktx.android"
+    namespace = "com.gitub.l3gacy.ktx.android"
     compileSdk = 35
 
     defaultConfig {
