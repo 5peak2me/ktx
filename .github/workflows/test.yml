@@ -11,13 +11,17 @@ jobs:
       JAVA_TOOL_OPTIONS: -Xmx4g -XX:+UseParallelGC
     steps:
       - uses: actions/checkout@v4.2.2
+
+      - name: Setup Java
       - uses: actions/setup-java@v4
         with:
           distribution: 'zulu'
-          java-version: 17
+          java-version: '17'
+
+      - name: Setup Gradle
+        uses: gradle/actions/setup-gradle@v4
 
       - name: Run unit tests
-        uses: gradle/actions/setup-gradle@v4
         run: jacocoTestReport --stacktrace
 
       - name: Upload test results artifact
