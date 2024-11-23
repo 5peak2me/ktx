@@ -15,31 +15,79 @@
  */
 package com.github.l3gcay.ktx
 
+import junit.framework.TestCase.assertEquals
 import org.junit.Test
+import org.junit.runner.RunWith
+import org.junit.runners.Parameterized
+import java.util.Locale
 
-internal class NumberTest {
+@RunWith(Parameterized::class)
+internal class NumberTest(private val input: Number?, private val expected: Number) {
 
   @Test
-  fun `test Number orZero`() {
-    val number = 1
-    assert(number.orZero() == 1)
+  fun `test orZero`() {
+    assertEquals(expected, input.orZero())  // 验证 orZero 的返回值
+  }
 
-    val number1: Byte? = null
-    assert(number1.orZero() == 0)
+  companion object {
+    @JvmStatic
+    @Parameterized.Parameters
+    fun data(): List<Array<out Any?>> {
+      return listOf(
+        arrayOf(1, 1),        // 非 null 的整数
+        arrayOf(0, 0),        // 非 null 的整数
+        arrayOf(-100, -100),  // 非 null 的负整数
+        arrayOf(null, 0),     // null 的整数
+        arrayOf(1.1f, 1.1f),  // 非 null 的浮点数
+        arrayOf(0.0f, 0f),    // 非 null 的浮点数
+        arrayOf(2.3, 2.3),    // 非 null 的双精度数
+        arrayOf(0.0, 0.0),    // 非 null 的双精度数
+        arrayOf(null, 0)      // null 的双精度数
+      )
+    }
+  }
 
-    val number2: Short? = null
-    assert(number2.orZero() == 0)
+  @Test
+  fun `test toCurrency`() {
+    val number = 1.2345678912345679E8
+    assertEquals("¥123,456,789.12", number.toCurrency())
+    assertEquals("$123,456,789.12", number.toCurrency(Locale.US))
+    assertEquals("£123,456,789.12", number.toCurrency(Locale.UK))
+    assertEquals("$123,456,789.12", number.toCurrency(Locale.CANADA))
+    assertEquals("₹123,456,789.12", number.toCurrency(Locale.of("en", "IN")))
+    assertEquals("€123,456,789.12", number.toCurrency(Locale.of("en", "IE")))
+    assertEquals("$123,456,789.12", number.toCurrency(Locale.of("en", "NZ")))
+    assertEquals("R123 456 789,12", number.toCurrency(Locale.of("en", "ZA")))
+    assertEquals("$123,456,789.12", number.toCurrency(Locale.of("en", "JM")))
+    assertEquals("RM123,456,789.12", number.toCurrency(Locale.of("en", "MY")))
+    assertEquals("₱123,456,789.12", number.toCurrency(Locale.of("en", "PH")))
+    assertEquals("$123,456,789.12", number.toCurrency(Locale.of("en", "TT")))
+    assertEquals("HK$123,456,789.12", number.toCurrency(Locale.of("en", "HK")))
 
-    val number3: Int? = null
-    assert(number3.orZero() == 0)
+    val number2 = 100000000
+    assertEquals("¥100,000,000.00", number2.toCurrency(Locale.CHINA))
+    assertEquals("$100,000,000.00", number2.toCurrency(Locale.US))
 
-    val number4: Long? = null
-    assert(number4.orZero() == 0)
+    val number3 = 10000.123F
+    assertEquals("¥10,000.12", number3.toCurrency(Locale.of("zh", "CN")))
+    assertEquals("$10,000.12", number3.toCurrency(Locale.of("en", "US")))
 
-    val number5: Float? = null
-    assert(number5.orZero() == 0)
+    assertEquals("¥0.00", null.toCurrency())
+  }
 
-    val number6: Double? = null
-    assert(number6.orZero() == 0)
+  @Test
+  fun `test toPercent`() {
+    val number = 0.12345678912345678
+    assertEquals("12%", number.toPercent())
+    assertEquals("12%", number.toPercent(Locale.CHINA))
+
+    assertEquals("0%", null.toPercent())
+    assertEquals("0%", null.toPercent(Locale.CHINA))
+
+    val zero = 0
+    assertEquals("0%", zero.toPercent(Locale.US))
+
+    val number2 = 134L
+    assertEquals("13,400%", number2.toPercent())
   }
 }

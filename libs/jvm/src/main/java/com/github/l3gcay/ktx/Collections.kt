@@ -21,7 +21,7 @@ package com.github.l3gcay.ktx
  * @param default the collection to return if this collection is null or empty.
  * @return this collection if it is not null and not empty, or the default collection otherwise.
  */
-public fun <T> Collection<T>?.orDefault(default: Collection<T>?): Collection<T> =
+public inline fun <reified T> Collection<T>?.orDefault(default: Collection<T>?): Collection<T> =
   (if (isNullOrEmpty()) default else this).orEmpty()
 
 /**
@@ -30,5 +30,5 @@ public fun <T> Collection<T>?.orDefault(default: Collection<T>?): Collection<T> 
  * @param default the map to return if this map is null or empty.
  * @return this map if it is not null and not empty, or the default map otherwise.
  */
-public fun <K, V> Map<K, V>?.orDefault(default: Map<K, V>?): Map<K, V> =
+public inline fun <reified K, reified V> Map<K, V>?.orDefault(default: Map<K, V>?): Map<K, V> =
   (if (isNullOrEmpty()) default else this).orEmpty()

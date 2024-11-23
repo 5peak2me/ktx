@@ -23,10 +23,14 @@ internal class StringTest {
   @Test
   fun `test capitalize`() {
     assertEquals("Hello World", "hello World".capitalize)
+    assertEquals("Hello World", "Hello World".capitalize)
+    assertEquals("", "".capitalize)
   }
 
   @Test
   fun `test decapitalize`() {
     assertEquals("hello world", "Hello world".decapitalize)
+    assertEquals("hello world", "hello world".decapitalize)
+    assertEquals("", "".decapitalize)
   }
 }

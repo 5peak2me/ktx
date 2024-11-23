@@ -44,10 +44,7 @@ public inline fun <reified T : Number> T?.orZero(): Number = this ?: 0
  * @return the formatted string.
  */
 public inline fun <reified T : Number> T?.toCurrency(locale: Locale = Locale.getDefault()): String =
-  NumberFormat
-    .getCurrencyInstance(locale)
-    .format(this.orZero())
-    .orEmpty()
+  NumberFormat.getCurrencyInstance(locale).format(this.orZero())
 
 /**
  * Formats this number as a percentage and returns the result as a string.
@@ -60,7 +57,4 @@ public inline fun <reified T : Number> T?.toCurrency(locale: Locale = Locale.get
  * @return the formatted string.
  */
 public inline fun <reified T : Number> T?.toPercent(locale: Locale = Locale.getDefault()): String =
-  NumberFormat
-    .getPercentInstance(locale)
-    .format(this.orZero())
-    .orEmpty()
+  NumberFormat.getPercentInstance(locale).format(this.orZero())

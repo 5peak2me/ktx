@@ -22,8 +22,8 @@ package com.github.l3gcay.ktx
  * Copyright © 2023 J!nl!n™ Inc. All Rights Reserved.
  *
  */
-public inline val <T> T.isNull: Boolean
+public inline val <T> T?.isNull: Boolean
   get() = this == null
 
-public inline val <T> T.isNotNull: Boolean
+public inline val <T> T?.isNotNull: Boolean
   get() = this != null

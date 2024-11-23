@@ -23,16 +23,22 @@ internal class CollectionsTest {
   @Test
   fun `test Collection orDefault`() {
     val list = listOf(1, 2, 3)
-    assert(Collections.EMPTY_LIST.orDefault(list) == list)
-    assert(list.orDefault(Collections.emptyList()) == list)
+    val empty = Collections.EMPTY_LIST
+
+    assert(empty.orDefault(list) == list)
+    assert(list.orDefault(empty) == list)
     assert(null.orDefault(list) == list)
+    assert(empty.orDefault(null) == empty)
   }
 
   @Test
   fun `test Map orDefault`() {
-    val map1 = mapOf(1 to "1", 2 to "2", 3 to "3")
-    assert(Collections.emptyMap<Int, String>().orDefault(map1) == map1)
-    assert(map1.orDefault(Collections.emptyMap()) == map1)
-    assert(null.orDefault(map1) == map1)
+    val map = mapOf(1 to "1", 2 to "2", 3 to "3")
+    val empty = Collections.emptyMap<Int, String>()
+
+    assert(empty.orDefault(map) == map)
+    assert(map.orDefault(empty) == map)
+    assert(null.orDefault(map) == map)
+    assert(empty.orDefault(null) == empty)
   }
 }
