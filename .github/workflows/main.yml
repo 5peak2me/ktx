@@ -15,5 +15,9 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
+  analysis:
+    uses: analysis.yml
+
   test:
+    needs: [ analysis ]
     uses: ./.github/workflows/test.yml
