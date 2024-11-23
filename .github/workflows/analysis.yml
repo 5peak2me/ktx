@@ -8,7 +8,8 @@ jobs:
     name: spotless
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4.2.2
+      - name: Checkout
+        uses: actions/checkout@v4.2.2
 
       - name: Setup Java
         uses: actions/setup-java@v4
