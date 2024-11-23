@@ -20,8 +20,8 @@ import org.gradle.api.Project
 import org.gradle.api.artifacts.VersionCatalog
 import org.gradle.api.artifacts.VersionCatalogsExtension
 import org.gradle.api.publish.PublishingExtension
-import org.gradle.plugins.signing.SigningExtension
 import org.gradle.kotlin.dsl.getByType
+import org.gradle.plugins.signing.SigningExtension
 
 @InternalApi
 public inline val Project.libs: VersionCatalog

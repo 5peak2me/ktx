@@ -29,7 +29,7 @@ import org.gradle.api.artifacts.repositories.MavenRepositoryContentDescriptor
  * @return the configured Maven repository.
  */
 public fun RepositoryHandler.tencent(
-  descriptor: MavenRepositoryContentDescriptor.() -> Unit = {}
+  descriptor: MavenRepositoryContentDescriptor.() -> Unit = {},
 ): MavenArtifactRepository {
   return maven {
     setUrl("https://mirrors.cloud.tencent.com/nexus/repository/maven-public")
@@ -71,7 +71,7 @@ public fun RepositoryHandler.aliyun(
  * @return the configured Maven repository.
  */
 public fun RepositoryHandler.huawei(
-  descriptor: MavenRepositoryContentDescriptor.() -> Unit = {}
+  descriptor: MavenRepositoryContentDescriptor.() -> Unit = {},
 ): MavenArtifactRepository {
   return maven {
     setUrl("https://repo.huaweicloud.com/repository/maven")
@@ -89,7 +89,7 @@ public fun RepositoryHandler.huawei(
  * @param descriptor the configuration block for the Maven repository content descriptor.
  */
 public fun RepositoryHandler.jitpack(
-  descriptor: MavenRepositoryContentDescriptor.() -> Unit = {}
+  descriptor: MavenRepositoryContentDescriptor.() -> Unit = {},
 ): MavenArtifactRepository {
   return maven {
     setUrl("https://jitpack.io")
