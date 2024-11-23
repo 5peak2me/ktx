@@ -32,8 +32,6 @@ jobs:
 
       - name: Run Dokka Task 📚
         run: ./gradlew dokkaHtmlMultiModule --stacktrace
-        with:
-          cache-read-only: true
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
