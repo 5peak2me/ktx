@@ -29,7 +29,7 @@ import org.junit.runner.RunWith
  *
  */
 @RunWith(AndroidJUnit4::class)
-internal class ContextExtensionsTest {
+internal class ContextTest {
 
   @Test
   fun test_isSystemInDarkTheme() {

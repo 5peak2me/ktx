@@ -28,7 +28,6 @@ import android.content.res.Configuration
 public inline val Context.isSystemInDarkTheme: Boolean
   get() = (resources.configuration.uiMode.and(Configuration.UI_MODE_NIGHT_MASK)) == Configuration.UI_MODE_NIGHT_YES
 
-
 /**
  * Returns true if the device is in landscape orientation.
  *

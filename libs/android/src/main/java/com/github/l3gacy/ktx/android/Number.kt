@@ -55,5 +55,5 @@ public val <T : Number> T.sp: Float
  */
 @ColorInt
 public inline fun @receiver:ColorInt Int.alpha(
-  @FloatRange(from = 0.0, to = 1.0) alpha: Float
+  @FloatRange(from = 0.0, to = 1.0) alpha: Float,
 ): Int = Color.argb((this.alpha * alpha).toInt(), red, green, blue)
