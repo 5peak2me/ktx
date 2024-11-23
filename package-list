@@ -1,0 +1,7 @@
+$dokka.format:html-v1
+$dokka.linkExtension:html
+
+module:android
+com.github.l3gacy.ktx.android
+module:jvm
+com.github.l3gcay.ktx
