@@ -22,6 +22,7 @@ plugins {
   alias(libs.plugins.jetbrainsKotlinAndroid) apply false
   alias(libs.plugins.jetbrainsKotlinJvm) apply false
   alias(libs.plugins.androidLibrary) apply false
+  alias(libs.plugins.dokka)
 }
 
 subprojects {
@@ -29,6 +30,7 @@ subprojects {
     group = "com.github.5peak2me.ktx"
 
     plugins.apply("maven-publish")
+    plugins.apply("org.jetbrains.dokka")
 
     tasks.withType<KotlinCompile> {
       compilerOptions {

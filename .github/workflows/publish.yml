@@ -1,0 +1,41 @@
+name: Publish Documentation
+
+on:
+  push:
+    tags:
+      - '[0-9]+.[0-9]+.[0-9]+'
+
+permissions:
+  contents: write
+
+jobs:
+  deploy:
+    concurrency: ci-${{ github.ref }} # Recommended if you intend to make multiple deployments in quick succession.
+    runs-on: macos-latest
+    timeout-minutes: 60
+
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v4
+
+      - name: Validate Gradle Wrapper 🔧
+        uses: gradle/wrapper-validation-action@v1
+
+      - name: Setup Java 🔧
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'zulu'
+          java-version: '17'
+
+      - name: Setup Gradle 🔧
+        uses: gradle/actions/setup-gradle@v4
+
+      - name: Run Dokka Task 📚
+        run: ./gradlew dokkaHtmlMultiModule --stacktrace
+        with:
+          cache-read-only: true
+
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: build/dokka/htmlMultiModule
