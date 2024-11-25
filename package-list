@@ -3,5 +3,8 @@ $dokka.linkExtension:html
 
 module:android
 com.github.l3gacy.ktx.android
+module:gradle
+com.github.l3gcay.ktx.gradle
 module:jvm
 com.github.l3gcay.ktx
+com.github.l3gcay.ktx.internal

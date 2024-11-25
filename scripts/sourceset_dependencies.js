@@ -1,1 +1,1 @@
-sourceset_dependencies = '{":libs:jvm:dokkaHtmlPartial/main":[],":libs:android:dokkaHtmlPartial/debug":[],":libs:android:dokkaHtmlPartial/main":[],":libs:android:dokkaHtmlPartial/release":[]}'
+sourceset_dependencies = '{":libs:gradle:dokkaHtmlPartial/main":[],":libs:jvm:dokkaHtmlPartial/main":[],":libs:android:dokkaHtmlPartial/debug":[],":libs:android:dokkaHtmlPartial/main":[],":libs:android:dokkaHtmlPartial/release":[]}'
