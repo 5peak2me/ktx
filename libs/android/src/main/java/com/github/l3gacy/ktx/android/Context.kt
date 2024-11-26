@@ -16,7 +16,16 @@
 package com.github.l3gacy.ktx.android
 
 import android.content.Context
+import android.content.res.ColorStateList
 import android.content.res.Configuration
+import android.graphics.drawable.Drawable
+import android.util.TypedValue
+import android.view.View
+import androidx.annotation.ColorInt
+import androidx.annotation.ColorRes
+import androidx.annotation.DrawableRes
+import androidx.annotation.StringRes
+import androidx.core.content.ContextCompat
 
 /**
  * Returns true if the system is currently in a dark theme.
@@ -35,3 +44,77 @@ public inline val Context.isSystemInDarkTheme: Boolean
  */
 public inline val Context.isLandscape: Boolean
   get() = resources.configuration.orientation == Configuration.ORIENTATION_LANDSCAPE
+
+context(Context)
+public val <T : Number> T.dp: Float
+  get() = TypedValue.applyDimension(
+    TypedValue.COMPLEX_UNIT_DIP,
+    this.toFloat(),
+    resources.displayMetrics,
+  )
+
+context(View)
+public val <T : Number> T.dp: Float
+  get() = TypedValue.applyDimension(
+    TypedValue.COMPLEX_UNIT_DIP,
+    this.toFloat(),
+    resources.displayMetrics,
+  )
+
+context(Context)
+public val <T : Number> T.sp: Float
+  get() = TypedValue.applyDimension(
+    TypedValue.COMPLEX_UNIT_SP,
+    this.toFloat(),
+    resources.displayMetrics
+  )
+
+context(View)
+public val <T : Number> T.sp: Float
+  get() = TypedValue.applyDimension(
+    TypedValue.COMPLEX_UNIT_SP,
+    this.toFloat(),
+    resources.displayMetrics
+  )
+
+context(Context)
+public val @receiver:StringRes Int.text: CharSequence
+  get() = getText(this)
+
+context(View)
+public val @receiver:StringRes Int.text: CharSequence
+  get() = context.getText(this)
+
+context(Context)
+public val @receiver:StringRes Int.string: String
+  get() = ContextCompat.getString(this@Context, this)
+
+context(View)
+public val @receiver:StringRes Int.string: String
+  get() = ContextCompat.getString(context,this)
+
+context(Context)
+public val @receiver:ColorRes Int.color: Int
+  @ColorInt
+  get() = ContextCompat.getColor(this@Context, this)
+
+context(View)
+public val @receiver:ColorRes Int.color: Int
+  @ColorInt
+  get() = ContextCompat.getColor(context, this)
+
+context(Context)
+public val @receiver:DrawableRes Int.drawable: Drawable?
+  get() = ContextCompat.getDrawable(this@Context, this)
+
+context(View)
+public val @receiver:DrawableRes Int.drawable: Drawable?
+  get() = ContextCompat.getDrawable(context, this)
+
+context(Context)
+public val @receiver:ColorRes Int.states: ColorStateList?
+  get() = ContextCompat.getColorStateList(this@Context, this)
+
+context(View)
+public val @receiver:ColorRes Int.states: ColorStateList?
+  get() = ContextCompat.getColorStateList(context, this)
