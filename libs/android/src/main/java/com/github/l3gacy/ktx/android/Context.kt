@@ -66,7 +66,7 @@ public val <T : Number> T.sp: Float
   get() = TypedValue.applyDimension(
     TypedValue.COMPLEX_UNIT_SP,
     this.toFloat(),
-    resources.displayMetrics
+    resources.displayMetrics,
   )
 
 context(View)
@@ -74,7 +74,7 @@ public val <T : Number> T.sp: Float
   get() = TypedValue.applyDimension(
     TypedValue.COMPLEX_UNIT_SP,
     this.toFloat(),
-    resources.displayMetrics
+    resources.displayMetrics,
   )
 
 context(Context)
@@ -91,7 +91,7 @@ public val @receiver:StringRes Int.string: String
 
 context(View)
 public val @receiver:StringRes Int.string: String
-  get() = ContextCompat.getString(context,this)
+  get() = ContextCompat.getString(context, this)
 
 context(Context)
 public val @receiver:ColorRes Int.color: Int
