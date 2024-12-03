@@ -22,8 +22,19 @@ package com.github.l3gcay.ktx
  * Copyright © 2023 J!nl!n™ Inc. All Rights Reserved.
  *
  */
+
+/**
+ * Checks if the object is null.
+ *
+ * @return `true` if the object is null, `false` otherwise.
+ */
 public inline val <T> T?.isNull: Boolean
   get() = this == null
 
+/**
+ * Checks if the object is not null.
+ *
+ * @return `true` if the object is not null, `false` otherwise.
+ */
 public inline val <T> T?.isNotNull: Boolean
   get() = this != null
