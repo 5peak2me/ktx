@@ -18,6 +18,7 @@ plugins {
   `kotlin-dsl`
   alias(libs.plugins.jetbrainsKotlinJvm)
   id("jacoco")
+  id("org.jetbrains.kotlinx.binary-compatibility-validator")
 }
 
 version = "0.0.1"
