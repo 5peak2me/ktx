@@ -29,7 +29,10 @@ internal class ProjectTest {
   fun `test libs`() {
     val project = ProjectBuilder.builder().build()
     project.afterEvaluate {
-      assertTrue(project.extensions.findByType(VersionCatalogsExtension::class.java)?.named("libs") == project.libs)
+      assertTrue(
+        project.extensions.findByType(VersionCatalogsExtension::class.java)
+          ?.named("libs") == project.libs
+      )
     }
   }
 
