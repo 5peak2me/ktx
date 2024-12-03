@@ -1,0 +1,17 @@
+public final class com/github/l3gcay/ktx/gradle/ProjectKt {
+	public static final fun getGradlePublishing (Lorg/gradle/api/Project;)Lorg/gradle/api/publish/PublishingExtension;
+	public static final fun getGradleSigning (Lorg/gradle/api/Project;)Lorg/gradle/plugins/signing/SigningExtension;
+	public static final fun getLibs (Lorg/gradle/api/Project;)Lorg/gradle/api/artifacts/VersionCatalog;
+}
+
+public final class com/github/l3gcay/ktx/gradle/RepositoryHandlerKt {
+	public static final fun aliyun (Lorg/gradle/api/artifacts/dsl/RepositoryHandler;Ljava/lang/String;Lkotlin/jvm/functions/Function1;)Lorg/gradle/api/artifacts/repositories/MavenArtifactRepository;
+	public static synthetic fun aliyun$default (Lorg/gradle/api/artifacts/dsl/RepositoryHandler;Ljava/lang/String;Lkotlin/jvm/functions/Function1;ILjava/lang/Object;)Lorg/gradle/api/artifacts/repositories/MavenArtifactRepository;
+	public static final fun huawei (Lorg/gradle/api/artifacts/dsl/RepositoryHandler;Lkotlin/jvm/functions/Function1;)Lorg/gradle/api/artifacts/repositories/MavenArtifactRepository;
+	public static synthetic fun huawei$default (Lorg/gradle/api/artifacts/dsl/RepositoryHandler;Lkotlin/jvm/functions/Function1;ILjava/lang/Object;)Lorg/gradle/api/artifacts/repositories/MavenArtifactRepository;
+	public static final fun jitpack (Lorg/gradle/api/artifacts/dsl/RepositoryHandler;Lkotlin/jvm/functions/Function1;)Lorg/gradle/api/artifacts/repositories/MavenArtifactRepository;
+	public static synthetic fun jitpack$default (Lorg/gradle/api/artifacts/dsl/RepositoryHandler;Lkotlin/jvm/functions/Function1;ILjava/lang/Object;)Lorg/gradle/api/artifacts/repositories/MavenArtifactRepository;
+	public static final fun tencent (Lorg/gradle/api/artifacts/dsl/RepositoryHandler;Lkotlin/jvm/functions/Function1;)Lorg/gradle/api/artifacts/repositories/MavenArtifactRepository;
+	public static synthetic fun tencent$default (Lorg/gradle/api/artifacts/dsl/RepositoryHandler;Lkotlin/jvm/functions/Function1;ILjava/lang/Object;)Lorg/gradle/api/artifacts/repositories/MavenArtifactRepository;
+}
+

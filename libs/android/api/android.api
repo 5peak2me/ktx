@@ -1,0 +1,25 @@
+public final class com/github/l3gacy/ktx/android/ContextKt {
+	public static final fun getColor (Landroid/content/Context;I)I
+	public static final fun getColor (Landroid/view/View;I)I
+	public static final fun getDp (Landroid/content/Context;Ljava/lang/Number;)F
+	public static final fun getDp (Landroid/view/View;Ljava/lang/Number;)F
+	public static final fun getDrawable (Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
+	public static final fun getDrawable (Landroid/view/View;I)Landroid/graphics/drawable/Drawable;
+	public static final fun getSp (Landroid/content/Context;Ljava/lang/Number;)F
+	public static final fun getSp (Landroid/view/View;Ljava/lang/Number;)F
+	public static final fun getStates (Landroid/content/Context;I)Landroid/content/res/ColorStateList;
+	public static final fun getStates (Landroid/view/View;I)Landroid/content/res/ColorStateList;
+	public static final fun getString (Landroid/content/Context;I)Ljava/lang/String;
+	public static final fun getString (Landroid/view/View;I)Ljava/lang/String;
+	public static final fun getText (Landroid/content/Context;I)Ljava/lang/CharSequence;
+	public static final fun getText (Landroid/view/View;I)Ljava/lang/CharSequence;
+	public static final fun isLandscape (Landroid/content/Context;)Z
+	public static final fun isSystemInDarkTheme (Landroid/content/Context;)Z
+}
+
+public final class com/github/l3gacy/ktx/android/NumberKt {
+	public static final fun alpha (IF)I
+	public static final fun getDp (Ljava/lang/Number;)F
+	public static final fun getSp (Ljava/lang/Number;)F
+}
+

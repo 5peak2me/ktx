@@ -23,6 +23,7 @@ plugins {
   alias(libs.plugins.jetbrainsKotlinJvm) apply false
   alias(libs.plugins.androidLibrary) apply false
   alias(libs.plugins.dokka)
+  alias(libs.plugins.kotlin.binary.compatibility)
 }
 
 allprojects {
