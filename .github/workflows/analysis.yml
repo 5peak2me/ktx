@@ -37,8 +37,8 @@ jobs:
           distribution: 'zulu'
           java-version: '17'
 
-      - name: Setup Gradle Build Action 🐘
-        uses: gradle/gradle-build-action@v3.5.0
+      - name: Setup Gradle 🐘
+        uses: gradle/actions/setup-gradle@v4
 
       - name: binary compatibility
         run: ./gradlew apiCheck --stacktrace
