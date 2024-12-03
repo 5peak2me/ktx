@@ -19,8 +19,23 @@ import android.content.Intent
 import androidx.core.content.IntentCompat
 import java.io.Serializable
 
+  /**
+   * Retrieve an extra from the intent using the given key. The extra should
+   * have been added using [Intent.putExtra] with a value that implements the
+   * [Serializable] interface.
+   *
+   * @param key the key of the extra
+   * @return the value of the extra, or null if no such extra was found
+   */
 public inline fun <reified T : Serializable> Intent.serializable(key: String): T? =
   IntentCompat.getSerializableExtra(this, key, T::class.java)
 
+  /**
+   * Retrieve an extra from the intent using the given key. The extra should
+   * have been added using [Intent.putExtra].
+   *
+   * @param key the key of the extra
+   * @return the value of the extra, or null if no such extra was found
+   */
 public inline fun <reified T : Serializable> Intent.parcelable(key: String): T? =
   IntentCompat.getParcelableExtra(this, key, T::class.java)
