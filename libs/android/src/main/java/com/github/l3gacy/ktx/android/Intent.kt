@@ -16,6 +16,7 @@
 package com.github.l3gacy.ktx.android
 
 import android.content.Intent
+import android.os.Parcelable
 import androidx.core.content.IntentCompat
 import java.io.Serializable
 
@@ -27,7 +28,7 @@ import java.io.Serializable
  * @param key the key of the extra
  * @return the value of the extra, or null if no such extra was found
  */
-public inline fun <reified T : Serializable> Intent.serializable(key: String): T? =
+public inline fun <reified T : Serializable> Intent.serializableExtra(key: String): T? =
   IntentCompat.getSerializableExtra(this, key, T::class.java)
 
 /**
@@ -37,5 +38,27 @@ public inline fun <reified T : Serializable> Intent.serializable(key: String): T
  * @param key the key of the extra
  * @return the value of the extra, or null if no such extra was found
  */
-public inline fun <reified T : Serializable> Intent.parcelable(key: String): T? =
+public inline fun <reified T : Parcelable> Intent.parcelableExtra(key: String): T? =
   IntentCompat.getParcelableExtra(this, key, T::class.java)
+
+/**
+ * Retrieve a Parcelable array extra from the Intent using the given key. The
+ * array should have been added using [Intent.putExtra] with values that
+ * implement the [Parcelable] interface.
+ *
+ * @param key the key of the extra
+ * @return the array of the extra, or null if no such extra was found
+ */
+public inline fun <reified T : Parcelable> Intent.parcelableArrayExtra(key: String): Array<T>? =
+  IntentCompat.getParcelableArrayExtra(this, key, T::class.java)?.map { it as T }?.toTypedArray()
+
+/**
+ * Retrieve an extra from the intent using the given key. The extra should
+ * have been added using [Intent.putExtra] with a value that implements the
+ * [Parcelable] interface.
+ *
+ * @param key the key of the extra
+ * @return the value of the extra, or null if no such extra was found
+ */
+public inline fun <reified T : Parcelable> Intent.parcelableArrayListExtra(key: String): ArrayList<T>? =
+  IntentCompat.getParcelableArrayListExtra<T>(this, key, T::class.java)
