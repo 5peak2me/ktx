@@ -30,12 +30,12 @@ package com.github.l3gcay.ktx
  * The title case of a character is usually the same as its upper case with several exceptions.
  * The particular list of characters with the special title case form depends on the underlying platform.
  */
-public val String.capitalize: String
+public inline val String.capitalize: String
   get() = replaceFirstChar { if (it.isLowerCase()) it.titlecase() else it.toString() }
 
 /**
  * Returns a copy of this string having its first letter lowercased, or the original string if it's empty or already
  * starts with a lower case letter.
  */
-public val String.decapitalize: String
+public inline val String.decapitalize: String
   get() = replaceFirstChar { it.lowercase() }
