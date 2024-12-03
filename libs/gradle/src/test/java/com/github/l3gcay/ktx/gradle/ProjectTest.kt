@@ -16,6 +16,8 @@
 package com.github.l3gcay.ktx.gradle
 
 import junit.framework.TestCase.assertTrue
+import org.gradle.api.artifacts.VersionCatalog
+import org.gradle.api.artifacts.VersionCatalogsExtension
 import org.gradle.api.publish.PublishingExtension
 import org.gradle.plugins.signing.SigningExtension
 import org.gradle.testfixtures.ProjectBuilder
@@ -26,6 +28,9 @@ internal class ProjectTest {
   @Test
   fun `test libs`() {
     val project = ProjectBuilder.builder().build()
+    project.afterEvaluate {
+      assertTrue(project.extensions.findByType(VersionCatalogsExtension::class.java)?.named("libs") == project.libs)
+    }
   }
 
   @Test
