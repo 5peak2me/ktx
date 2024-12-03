@@ -21,13 +21,13 @@ jobs:
       - name: Validate Gradle Wrapper 🔧
         uses: gradle/actions/wrapper-validation@v3
 
-      - name: Setup Java 🔧
+      - name: Setup Java ☕
         uses: actions/setup-java@v4
         with:
           distribution: 'zulu'
           java-version: '17'
 
-      - name: Setup Gradle 🔧
+      - name: Setup Gradle 🐘
         uses: gradle/actions/setup-gradle@v4
 
       - name: Run Dokka Task 📚
