@@ -15,9 +15,9 @@
  */
 plugins {
   id("java-library")
-  alias(libs.plugins.jetbrainsKotlinJvm)
-  id("jacoco")
+  alias(libs.plugins.jetbrains.kotlin.jvm)
   id("org.jetbrains.kotlinx.binary-compatibility-validator")
+  id("jacoco")
 }
 
 version = "0.0.1"

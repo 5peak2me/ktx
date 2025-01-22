@@ -16,9 +16,9 @@
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 
 plugins {
-  alias(libs.plugins.androidLibrary)
-  alias(libs.plugins.jetbrainsKotlinAndroid)
-  id("org.jetbrains.kotlinx.binary-compatibility-validator")
+  alias(libs.plugins.android.library)
+  alias(libs.plugins.jetbrains.kotlin.android)
+  alias(libs.plugins.jetbrains.kotlinx.binary.compatibility)
 }
 
 version = "0.0.1"
