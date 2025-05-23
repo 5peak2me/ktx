@@ -19,6 +19,8 @@ import android.content.Context
 import android.content.res.ColorStateList
 import android.content.res.Configuration
 import android.graphics.drawable.Drawable
+import android.net.ConnectivityManager
+import android.net.NetworkCapabilities
 import android.util.TypedValue
 import android.view.View
 import androidx.annotation.ColorInt
@@ -26,6 +28,18 @@ import androidx.annotation.ColorRes
 import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
 import androidx.core.content.ContextCompat
+
+public val Context.isOnline: Boolean
+  get() {
+    val connectivity =
+      getSystemService(Context.CONNECTIVITY_SERVICE) as? ConnectivityManager ?: return false
+    val network = connectivity.activeNetwork ?: return false
+    val capabilities = connectivity.getNetworkCapabilities(network) ?: return false
+    return capabilities.hasTransport(NetworkCapabilities.TRANSPORT_CELLULAR) ||
+      capabilities.hasTransport(NetworkCapabilities.TRANSPORT_WIFI) ||
+      capabilities.hasTransport(NetworkCapabilities.TRANSPORT_ETHERNET) ||
+      capabilities.hasTransport(NetworkCapabilities.TRANSPORT_VPN)
+  }
 
 /**
  * Returns true if the system is currently in a dark theme.
@@ -78,37 +92,37 @@ public val <T : Number> T.sp: Float
   )
 
 context(Context)
-public val @receiver:StringRes Int.text: CharSequence
+public inline val @receiver:StringRes Int.text: CharSequence
   get() = getText(this)
 
 context(View)
-public val @receiver:StringRes Int.text: CharSequence
+public inline val @receiver:StringRes Int.text: CharSequence
   get() = context.getText(this)
 
 context(Context)
-public val @receiver:StringRes Int.string: String
+public inline val @receiver:StringRes Int.string: String
   get() = ContextCompat.getString(this@Context, this)
 
 context(View)
-public val @receiver:StringRes Int.string: String
+public inline val @receiver:StringRes Int.string: String
   get() = ContextCompat.getString(context, this)
 
 context(Context)
-public val @receiver:ColorRes Int.color: Int
+public inline val @receiver:ColorRes Int.color: Int
   @ColorInt
   get() = ContextCompat.getColor(this@Context, this)
 
 context(View)
-public val @receiver:ColorRes Int.color: Int
+public inline val @receiver:ColorRes Int.color: Int
   @ColorInt
   get() = ContextCompat.getColor(context, this)
 
 context(Context)
-public val @receiver:DrawableRes Int.drawable: Drawable?
+public inline val @receiver:DrawableRes Int.drawable: Drawable?
   get() = ContextCompat.getDrawable(this@Context, this)
 
 context(View)
-public val @receiver:DrawableRes Int.drawable: Drawable?
+public inline val @receiver:DrawableRes Int.drawable: Drawable?
   get() = ContextCompat.getDrawable(context, this)
 
 context(Context)
