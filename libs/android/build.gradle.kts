@@ -50,7 +50,11 @@ android {
   kotlinOptions {
     jvmTarget = JvmTarget.JVM_17.target
   }
-
+  publishing {
+    singleVariant("release") {
+      withSourcesJar()
+    }
+  }
 }
 
 afterEvaluate {
