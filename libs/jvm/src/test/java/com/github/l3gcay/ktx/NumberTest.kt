@@ -32,19 +32,17 @@ internal class NumberTest(private val input: Number?, private val expected: Numb
   companion object {
     @JvmStatic
     @Parameterized.Parameters
-    fun data(): List<Array<out Any?>> {
-      return listOf(
-        arrayOf(1, 1),
-        arrayOf(0, 0),
-        arrayOf(-100, -100),
-        arrayOf(null, 0),
-        arrayOf(1.1f, 1.1f),
-        arrayOf(0.0f, 0f),
-        arrayOf(2.3, 2.3),
-        arrayOf(0.0, 0.0),
-        arrayOf(null, 0),
-      )
-    }
+    fun data(): List<Array<out Any?>> = listOf(
+      arrayOf(1, 1),
+      arrayOf(0, 0),
+      arrayOf(-100, -100),
+      arrayOf(null, 0),
+      arrayOf(1.1f, 1.1f),
+      arrayOf(0.0f, 0f),
+      arrayOf(2.3, 2.3),
+      arrayOf(0.0, 0.0),
+      arrayOf(null, 0),
+    )
   }
 
   @Test

@@ -30,11 +30,9 @@ import org.gradle.api.artifacts.repositories.MavenRepositoryContentDescriptor
  */
 public fun RepositoryHandler.tencent(
   descriptor: MavenRepositoryContentDescriptor.() -> Unit = {},
-): MavenArtifactRepository {
-  return maven {
-    setUrl("https://mirrors.cloud.tencent.com/nexus/repository/maven-public")
-    mavenContent(descriptor)
-  }
+): MavenArtifactRepository = maven {
+  setUrl("https://mirrors.cloud.tencent.com/nexus/repository/maven-public")
+  mavenContent(descriptor)
 }
 
 /**
@@ -54,11 +52,9 @@ public fun RepositoryHandler.tencent(
 public fun RepositoryHandler.aliyun(
   repo: String = "public",
   descriptor: MavenRepositoryContentDescriptor.() -> Unit = {},
-): MavenArtifactRepository {
-  return maven {
-    setUrl("https://maven.aliyun.com/repository/$repo")
-    mavenContent(descriptor)
-  }
+): MavenArtifactRepository = maven {
+  setUrl("https://maven.aliyun.com/repository/$repo")
+  mavenContent(descriptor)
 }
 
 /**
@@ -72,11 +68,9 @@ public fun RepositoryHandler.aliyun(
  */
 public fun RepositoryHandler.huawei(
   descriptor: MavenRepositoryContentDescriptor.() -> Unit = {},
-): MavenArtifactRepository {
-  return maven {
-    setUrl("https://repo.huaweicloud.com/repository/maven")
-    mavenContent(descriptor)
-  }
+): MavenArtifactRepository = maven {
+  setUrl("https://repo.huaweicloud.com/repository/maven")
+  mavenContent(descriptor)
 }
 
 /**
@@ -90,9 +84,7 @@ public fun RepositoryHandler.huawei(
  */
 public fun RepositoryHandler.jitpack(
   descriptor: MavenRepositoryContentDescriptor.() -> Unit = {},
-): MavenArtifactRepository {
-  return maven {
-    setUrl("https://jitpack.io")
-    mavenContent(descriptor)
-  }
+): MavenArtifactRepository = maven {
+  setUrl("https://jitpack.io")
+  mavenContent(descriptor)
 }
