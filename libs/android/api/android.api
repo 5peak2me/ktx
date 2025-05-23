@@ -1,3 +1,7 @@
+public final class com/github/l3gacy/ktx/android/ActivtyKt {
+	public static final fun isSystemInDarkTheme (Landroidx/activity/ComponentActivity;)Lkotlinx/coroutines/flow/Flow;
+}
+
 public final class com/github/l3gacy/ktx/android/ContextKt {
 	public static final fun getColor (Landroid/content/Context;I)I
 	public static final fun getColor (Landroid/view/View;I)I
@@ -14,6 +18,7 @@ public final class com/github/l3gacy/ktx/android/ContextKt {
 	public static final fun getText (Landroid/content/Context;I)Ljava/lang/CharSequence;
 	public static final fun getText (Landroid/view/View;I)Ljava/lang/CharSequence;
 	public static final fun isLandscape (Landroid/content/Context;)Z
+	public static final fun isOnline (Landroid/content/Context;)Z
 	public static final fun isSystemInDarkTheme (Landroid/content/Context;)Z
 }
 

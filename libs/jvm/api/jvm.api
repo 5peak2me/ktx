@@ -4,6 +4,7 @@ public final class com/github/l3gcay/ktx/BooleanKt {
 }
 
 public final class com/github/l3gcay/ktx/GenericsKt {
+	public static final fun isNonNull (Ljava/lang/Object;)Z
 	public static final fun isNotNull (Ljava/lang/Object;)Z
 	public static final fun isNull (Ljava/lang/Object;)Z
 }
@@ -11,6 +12,7 @@ public final class com/github/l3gcay/ktx/GenericsKt {
 public final class com/github/l3gcay/ktx/StringKt {
 	public static final fun getCapitalize (Ljava/lang/String;)Ljava/lang/String;
 	public static final fun getDecapitalize (Ljava/lang/String;)Ljava/lang/String;
+	public static final fun times (Ljava/lang/CharSequence;I)Ljava/lang/String;
 }
 
 public abstract interface annotation class com/github/l3gcay/ktx/internal/InternalApi : java/lang/annotation/Annotation {
