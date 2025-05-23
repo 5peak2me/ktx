@@ -15,6 +15,7 @@
  */
 package com.github.l3gcay.ktx
 
+import org.junit.Assert.assertEquals
 import org.junit.Test
 
 internal class GenericsTest {
@@ -29,5 +30,13 @@ internal class GenericsTest {
   fun `test isNotNull`() {
     val str = "abc"
     assert(str.isNotNull)
+  }
+
+  @Test
+  fun `test isNonNull()`() {
+    val str: String? = null
+    if (str.isNonNull()) {
+      assertEquals(str.javaClass, String::class.java)
+    }
   }
 }

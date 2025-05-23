@@ -15,6 +15,8 @@
  */
 package com.github.l3gcay.ktx
 
+import kotlin.contracts.contract
+
 /**
  *
  * Created by J!nl!n on 2023/7/13.
@@ -38,3 +40,10 @@ public inline val <T> T?.isNull: Boolean
  */
 public inline val <T> T?.isNotNull: Boolean
   get() = this != null
+
+public fun <T> T?.isNonNull(): Boolean {
+  contract {
+    returns() implies (this@isNonNull != null)
+  }
+  return this != null
+}

@@ -23,6 +23,8 @@ package com.github.l3gcay.ktx
  *
  */
 
+public inline operator fun CharSequence.times(count: Int): String = repeat(count)
+
 /**
  * Returns a copy of this string having its first letter titlecased, or the original string if it's empty or already
  * starts with a title case letter.

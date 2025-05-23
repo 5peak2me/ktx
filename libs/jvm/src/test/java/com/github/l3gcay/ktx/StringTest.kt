@@ -16,9 +16,18 @@
 package com.github.l3gcay.ktx
 
 import junit.framework.TestCase.assertEquals
+import org.junit.Assert
 import org.junit.Test
 
 internal class StringTest {
+
+  @Test
+  fun `repeat string n times using times() method`() {
+    val str = "Hello World"
+    val result = str * 3
+
+    Assert.assertEquals("Hello WorldHello WorldHello World", result)
+  }
 
   @Test
   fun `test capitalize`() {
