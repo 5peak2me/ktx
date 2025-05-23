@@ -1,4 +1,4 @@
-public final class com/github/l3gacy/ktx/android/ActivtyKt {
+public final class com/github/l3gacy/ktx/android/ActivityKt {
 	public static final fun isSystemInDarkTheme (Landroidx/activity/ComponentActivity;)Lkotlinx/coroutines/flow/Flow;
 }
 
