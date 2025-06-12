@@ -36,6 +36,7 @@ dependencies {
 subprojects {
   if (name != "app") {
     group = "com.github.5peak2me.ktx"
+    version = "0.0.4"
 
     plugins.apply("maven-publish")
     plugins.apply("org.jetbrains.dokka")

@@ -20,8 +20,6 @@ plugins {
   id("jacoco")
 }
 
-version = "0.0.1"
-
 publishing {
   publications {
     register("release", MavenPublication::class) {

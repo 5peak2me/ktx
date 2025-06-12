@@ -21,8 +21,6 @@ plugins {
   alias(libs.plugins.jetbrains.kotlinx.binary.compatibility)
 }
 
-version = "0.0.1"
-
 android {
   namespace = "com.gitub.l3gacy.ktx.android"
   compileSdk = 35
