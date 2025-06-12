@@ -45,7 +45,7 @@ subprojects {
 
     tasks.withType<KotlinCompile> {
       compilerOptions {
-        jvmTarget = JvmTarget.JVM_17
+        jvmTarget = JvmTarget.JVM_11
         freeCompilerArgs.add("-Xexplicit-api=strict")
         freeCompilerArgs.add("-Xcontext-receivers")
         freeCompilerArgs.add("-opt-in=kotlin.contracts.ExperimentalContracts")
