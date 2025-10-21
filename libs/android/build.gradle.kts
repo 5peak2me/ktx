@@ -45,9 +45,6 @@ android {
     sourceCompatibility = JavaVersion.VERSION_11
     targetCompatibility = JavaVersion.VERSION_11
   }
-  kotlinOptions {
-    jvmTarget = JvmTarget.JVM_11.target
-  }
   publishing {
     singleVariant("release") {
       withSourcesJar()

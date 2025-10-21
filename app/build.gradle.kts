@@ -5,11 +5,11 @@ plugins {
 
 android {
     namespace = "com.l3gacy.app.ktx"
-    compileSdk = 35
+    compileSdk = libs.versions.compileSdk.get().toInt()
 
     defaultConfig {
         applicationId = "com.l3gacy.app.ktx"
-        minSdk = 24
+        minSdk = libs.versions.minSdk.get().toInt()
         targetSdk = 35
         versionCode = 1
         versionName = "1.0"
@@ -30,12 +30,14 @@ android {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
     }
-    kotlinOptions {
-        jvmTarget = "1.8"
-    }
 }
 
 dependencies {
+
+    implementation(libs.chucker.no.op)
+    implementation(libs.chucker)
+
+    implementation(libs.amap.get3dmap())
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
