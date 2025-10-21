@@ -28,7 +28,7 @@ androidx-constraintlayout = { group = "androidx.constraintlayout", name = "const
 chucker = "com.github.chuckerteam.chucker:library:4.1.0"
 chucker-no-op = "com.github.chuckerteam.chucker:library-no-op:4.1.0"
 
-amap-3dmap = "com.amap.api:3dmap:9.4.0"
+amap-3dmap = "com.amap.api:3dmap:9.8.3"
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
