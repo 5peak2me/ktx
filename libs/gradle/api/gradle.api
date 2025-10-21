@@ -4,6 +4,14 @@ public final class com/github/l3gcay/ktx/gradle/ProjectKt {
 	public static final fun getLibs (Lorg/gradle/api/Project;)Lorg/gradle/api/artifacts/VersionCatalog;
 }
 
+public final class com/github/l3gcay/ktx/gradle/ProviderKt {
+	public static final fun onlyIfTrue (Lorg/gradle/api/Project;Lorg/gradle/api/provider/Provider;)Lorg/gradle/api/provider/Provider;
+	public static final fun relativeToProject (Lorg/gradle/api/Project;Lorg/gradle/api/provider/Provider;Ljava/lang/String;)Lorg/gradle/api/provider/Provider;
+	public static final fun relativeToRootProject (Lorg/gradle/api/Project;Lorg/gradle/api/provider/Provider;Ljava/lang/String;)Lorg/gradle/api/provider/Provider;
+	public static final fun toDependency (Lorg/gradle/api/Project;Ljava/util/Optional;)Lorg/gradle/api/provider/Provider;
+	public static final fun toDependency (Lorg/gradle/api/Project;Lorg/gradle/api/provider/Provider;)Lorg/gradle/api/provider/Provider;
+}
+
 public final class com/github/l3gcay/ktx/gradle/RepositoryHandlerKt {
 	public static final fun aliyun (Lorg/gradle/api/artifacts/dsl/RepositoryHandler;Ljava/lang/String;Lkotlin/jvm/functions/Function1;)Lorg/gradle/api/artifacts/repositories/MavenArtifactRepository;
 	public static synthetic fun aliyun$default (Lorg/gradle/api/artifacts/dsl/RepositoryHandler;Ljava/lang/String;Lkotlin/jvm/functions/Function1;ILjava/lang/Object;)Lorg/gradle/api/artifacts/repositories/MavenArtifactRepository;

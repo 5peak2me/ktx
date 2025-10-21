@@ -5,12 +5,12 @@ plugins {
 
 android {
     namespace = "com.l3gacy.app.ktx"
-    compileSdk = 35
+    compileSdk = libs.versions.compileSdk.get().toIntOrNull()
 
     defaultConfig {
         applicationId = "com.l3gacy.app.ktx"
-        minSdk = 24
-        targetSdk = 35
+        minSdk = libs.versions.minSdk.get().toIntOrNull()
+        targetSdk = libs.versions.targetSdk.get().toIntOrNull()
         versionCode = 1
         versionName = "1.0"
 
@@ -29,9 +29,6 @@ android {
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
-    }
-    kotlinOptions {
-        jvmTarget = "1.8"
     }
 }
 
