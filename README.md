@@ -1,8 +1,8 @@
 # ktx
 
 [![](https://jitpack.io/v/5peak2me/ktx.svg)](https://jitpack.io/#5peak2me/ktx)
-[![Kotlin](https://img.shields.io/badge/Kotlin-2.1.20-blue?logo=Kotlin&logoColor=white.svg)](https://kotlinlang.org)
-[![Platform](https://img.shields.io/badge/Android-minSdk:24%20compileSdk:35-green?logo=Android)](https://developer.android.com/guide/)
+[![Kotlin](https://img.shields.io/badge/Kotlin-2.3.0-blue?logo=Kotlin&logoColor=white.svg)](https://kotlinlang.org)
+[![Platform](https://img.shields.io/badge/Android-minSdk:24%20compileSdk:36-green?logo=Android)](https://developer.android.com/guide/)
 
 <details>
   <summary>build.gradle</summary>
