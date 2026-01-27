@@ -21,14 +21,6 @@ plugins {
   id("jacoco")
 }
 
-publishing {
-  publications {
-    register("release", MavenPublication::class) {
-      from(components["java"])
-    }
-  }
-}
-
 java {
   sourceCompatibility = JavaVersion.VERSION_11
   targetCompatibility = JavaVersion.VERSION_11
