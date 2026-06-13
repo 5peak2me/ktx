@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout 🛎️
-        uses: actions/checkout@v5.0.1
+        uses: actions/checkout@v6.0.3
 
       - name: Setup Java ☕
         uses: actions/setup-java@v5.2.0
@@ -29,7 +29,7 @@ jobs:
     needs: spotless
     steps:
       - name: Checkout 🛎️
-        uses: actions/checkout@v5.0.1
+        uses: actions/checkout@v6.0.3
 
       - name: Setup Java ☕
         uses: actions/setup-java@v5.2.0
