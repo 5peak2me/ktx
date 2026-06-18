@@ -23,6 +23,7 @@ package com.github.l3gcay.ktx
  *
  */
 
+@Suppress("NOTHING_TO_INLINE")
 public inline operator fun CharSequence.times(count: Int): String = repeat(count)
 
 /**
