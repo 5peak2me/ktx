@@ -13,17 +13,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import org.jetbrains.kotlin.gradle.dsl.JvmTarget
+@file:OptIn(ExperimentalAbiValidation::class)
+
+import org.jetbrains.kotlin.gradle.dsl.abi.ExperimentalAbiValidation
 
 plugins {
   alias(libs.plugins.android.library)
-  alias(libs.plugins.jetbrains.kotlin.android)
-  alias(libs.plugins.jetbrains.kotlinx.binary.compatibility)
 }
 
 android {
   namespace = "com.gitub.l3gacy.ktx.android"
-  compileSdk = 35
+  compileSdk = 37
 
   defaultConfig {
     minSdk = 24
@@ -50,6 +50,12 @@ android {
       withSourcesJar()
     }
   }
+}
+
+kotlin {
+//  abiValidation {
+//    enabled = true
+//  }
 }
 
 afterEvaluate {

@@ -13,7 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+@file:OptIn(ExperimentalAbiValidation::class)
+
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
+import org.jetbrains.kotlin.gradle.dsl.abi.ExperimentalAbiValidation
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
@@ -23,7 +26,7 @@ plugins {
   alias(libs.plugins.jetbrains.kotlin.android) apply false
   alias(libs.plugins.jetbrains.kotlin.jvm) apply false
   alias(libs.plugins.jetbrains.dokka)
-  alias(libs.plugins.jetbrains.kotlinx.binary.compatibility) apply false
+//  alias(libs.plugins.jetbrains.kotlinx.binary.compatibility) apply false
 }
 
 dependencies {
@@ -45,8 +48,7 @@ subprojects {
       compilerOptions {
         jvmTarget = JvmTarget.JVM_11
         freeCompilerArgs.add("-Xexplicit-api=strict")
-        freeCompilerArgs.add("-Xcontext-receivers")
-//        freeCompilerArgs.add("-Xcontext-parameters")
+        freeCompilerArgs.add("-Xcontext-parameters")
         freeCompilerArgs.add("-opt-in=kotlin.contracts.ExperimentalContracts")
       }
     }

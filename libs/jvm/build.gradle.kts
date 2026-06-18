@@ -1,3 +1,7 @@
+@file:OptIn(ExperimentalAbiValidation::class)
+
+import org.jetbrains.kotlin.gradle.dsl.abi.ExperimentalAbiValidation
+
 /*
  * Copyright © 2023 J!nl!n™ Inc. All rights reserved.
  *
@@ -16,7 +20,6 @@
 plugins {
   id("java-library")
   alias(libs.plugins.jetbrains.kotlin.jvm)
-  alias(libs.plugins.jetbrains.kotlinx.binary.compatibility)
   id("jacoco")
 }
 
@@ -37,4 +40,10 @@ java {
   targetCompatibility = JavaVersion.VERSION_11
 
   withSourcesJar()
+}
+
+kotlin {
+  abiValidation {
+    enabled = true
+  }
 }
