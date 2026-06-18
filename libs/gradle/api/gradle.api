@@ -1,3 +1,7 @@
+public final class com/github/l3gcay/ktx/gradle/InternalKt {
+	public static final fun gradleLocalProperties (Ljava/io/File;)Ljava/util/Properties;
+}
+
 public final class com/github/l3gcay/ktx/gradle/ProjectKt {
 	public static final fun getGradlePublishing (Lorg/gradle/api/Project;)Lorg/gradle/api/publish/PublishingExtension;
 	public static final fun getGradleSigning (Lorg/gradle/api/Project;)Lorg/gradle/plugins/signing/SigningExtension;
@@ -6,9 +10,8 @@ public final class com/github/l3gcay/ktx/gradle/ProjectKt {
 
 public final class com/github/l3gcay/ktx/gradle/ProviderKt {
 	public static final fun onlyIfTrue (Lorg/gradle/api/Project;Lorg/gradle/api/provider/Provider;)Lorg/gradle/api/provider/Provider;
-	public static final fun relativeToProject (Lorg/gradle/api/Project;Lorg/gradle/api/provider/Provider;Ljava/lang/String;)Lorg/gradle/api/provider/Provider;
 	public static final fun relativeToRootProject (Lorg/gradle/api/Project;Lorg/gradle/api/provider/Provider;Ljava/lang/String;)Lorg/gradle/api/provider/Provider;
-	public static final fun toDependency (Lorg/gradle/api/Project;Ljava/util/Optional;)Lorg/gradle/api/provider/Provider;
+	public static final fun toDep (Lorg/gradle/api/provider/Provider;)Lorg/gradle/api/provider/Provider;
 	public static final fun toDependency (Lorg/gradle/api/Project;Lorg/gradle/api/provider/Provider;)Lorg/gradle/api/provider/Provider;
 }
 
