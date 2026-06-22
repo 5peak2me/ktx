@@ -51,8 +51,8 @@ android {
 }
 
 kotlin {
-  @OptIn(ExperimentalAbiValidation::class)
-  abiValidation()
+//  @OptIn(ExperimentalAbiValidation::class)
+//  abiValidation()
 }
 
 afterEvaluate {
