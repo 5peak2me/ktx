@@ -11,9 +11,9 @@ activity = "1.13.0"
 constraintlayout = "2.2.1"
 dokka = "2.2.0"
 
-compileSdk = "36"
+compileSdk = "37"
 minSdk = "24"
-targetSdk = "36"
+targetSdk = "37"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
