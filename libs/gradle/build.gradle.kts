@@ -1,7 +1,6 @@
 @file:OptIn(ExperimentalAbiValidation::class)
 
 import org.jetbrains.kotlin.gradle.dsl.abi.ExperimentalAbiValidation
-import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 /*
  * Copyright © 2023 J!nl!n™ Inc. All rights reserved.
@@ -20,7 +19,6 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
  */
 plugins {
   id("java-library")
-  `kotlin-dsl`
   alias(libs.plugins.jetbrains.kotlin.jvm)
   id("jacoco")
 }
@@ -38,14 +36,7 @@ dependencies {
   testImplementation(libs.junit)
 }
 
-val compileKotlin: KotlinCompile by tasks
-compileKotlin.compilerOptions {
-  freeCompilerArgs.set(listOf("-Xcontext-parameters"))
-}
-
 kotlin {
   explicitApi()
-  abiValidation {
-    enabled = true
-  }
+  abiValidation()
 }

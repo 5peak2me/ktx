@@ -43,7 +43,5 @@ java {
 }
 
 kotlin {
-  abiValidation {
-    enabled = true
-  }
+  abiValidation()
 }
