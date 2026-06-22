@@ -1,7 +1,3 @@
-@file:OptIn(ExperimentalAbiValidation::class)
-
-import org.jetbrains.kotlin.gradle.dsl.abi.ExperimentalAbiValidation
-
 /*
  * Copyright © 2023 J!nl!n™ Inc. All rights reserved.
  *
@@ -17,25 +13,24 @@ import org.jetbrains.kotlin.gradle.dsl.abi.ExperimentalAbiValidation
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-plugins {
-  id("java-library")
-  alias(libs.plugins.jetbrains.kotlin.jvm)
-  id("jacoco")
-}
+package com.github.speak2me.ktx
 
-java {
-  sourceCompatibility = JavaVersion.VERSION_11
-  targetCompatibility = JavaVersion.VERSION_11
+import org.junit.Assert.assertFalse
+import org.junit.Assert.assertTrue
+import org.junit.Test
 
-  withSourcesJar()
-}
+internal class BooleanTest {
 
-dependencies {
-  implementation(gradleApi())
-  implementation(project(":libs:jvm"))
-  testImplementation(libs.junit)
-}
+  @Test
+  fun `test toInt`() {
+    assert(true.toInt() == 1)
+    assert(false.toInt() == 0)
+    assertTrue(true.toInt() == 1)
+  }
 
-kotlin {
-  abiValidation()
+  @Test
+  fun `test toggle`() {
+    assertFalse(true.toggle())
+    assertTrue(false.toggle())
+  }
 }

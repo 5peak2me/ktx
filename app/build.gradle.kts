@@ -3,11 +3,11 @@ plugins {
 }
 
 android {
-    namespace = "com.l3gacy.app.ktx"
+    namespace = "com.speak2me.app.ktx"
     compileSdk = libs.versions.compileSdk.get().toIntOrNull()
 
     defaultConfig {
-        applicationId = "com.l3gacy.app.ktx"
+        applicationId = "com.speak2me.app.ktx"
         minSdk = libs.versions.minSdk.get().toIntOrNull()
         targetSdk = libs.versions.targetSdk.get().toIntOrNull()
         versionCode = 1

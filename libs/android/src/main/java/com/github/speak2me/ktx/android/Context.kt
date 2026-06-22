@@ -1,0 +1,134 @@
+/*
+ * Copyright © 2023 J!nl!n™ Inc. All rights reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     https://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+package com.github.speak2me.ktx.android
+
+import android.content.Context
+import android.content.res.ColorStateList
+import android.content.res.Configuration
+import android.graphics.drawable.Drawable
+import android.net.ConnectivityManager
+import android.net.NetworkCapabilities
+import android.util.TypedValue
+import android.view.View
+import androidx.annotation.ColorInt
+import androidx.annotation.ColorRes
+import androidx.annotation.DrawableRes
+import androidx.annotation.StringRes
+import androidx.core.content.ContextCompat
+
+public val Context.isOnline: Boolean
+  get() {
+    val connectivity =
+      getSystemService(Context.CONNECTIVITY_SERVICE) as? ConnectivityManager ?: return false
+    val network = connectivity.activeNetwork ?: return false
+    val capabilities = connectivity.getNetworkCapabilities(network) ?: return false
+    return capabilities.hasTransport(NetworkCapabilities.TRANSPORT_CELLULAR) ||
+      capabilities.hasTransport(NetworkCapabilities.TRANSPORT_WIFI) ||
+      capabilities.hasTransport(NetworkCapabilities.TRANSPORT_ETHERNET) ||
+      capabilities.hasTransport(NetworkCapabilities.TRANSPORT_VPN)
+  }
+
+/**
+ * Returns true if the system is currently in a dark theme.
+ *
+ * @see Configuration.UI_MODE_NIGHT_YES
+ * @see Configuration.UI_MODE_NIGHT_NO
+ * @see Configuration.UI_MODE_NIGHT_UNDEFINED
+ */
+public inline val Context.isSystemInDarkTheme: Boolean
+  get() = (resources.configuration.uiMode.and(Configuration.UI_MODE_NIGHT_MASK)) == Configuration.UI_MODE_NIGHT_YES
+
+/**
+ * Returns true if the device is in landscape orientation.
+ *
+ * @see Configuration.ORIENTATION_LANDSCAPE
+ */
+public inline val Context.isLandscape: Boolean
+  get() = resources.configuration.orientation == Configuration.ORIENTATION_LANDSCAPE
+
+context(context: Context)
+public val <T : Number> T.dp: Float
+  get() = TypedValue.applyDimension(
+    TypedValue.COMPLEX_UNIT_DIP,
+    this.toFloat(),
+    context.resources.displayMetrics,
+  )
+
+context(view: View)
+public val <T : Number> T.dp: Float
+  get() = TypedValue.applyDimension(
+    TypedValue.COMPLEX_UNIT_DIP,
+    this.toFloat(),
+    view.resources.displayMetrics,
+  )
+
+context(context: Context)
+public val <T : Number> T.sp: Float
+  get() = TypedValue.applyDimension(
+    TypedValue.COMPLEX_UNIT_SP,
+    this.toFloat(),
+    context.resources.displayMetrics,
+  )
+
+context(view: View)
+public val <T : Number> T.sp: Float
+  get() = TypedValue.applyDimension(
+    TypedValue.COMPLEX_UNIT_SP,
+    this.toFloat(),
+    view.resources.displayMetrics,
+  )
+
+context(context: Context)
+public inline val @receiver:StringRes Int.text: CharSequence
+  get() = context.getText(this)
+
+context(view: View)
+public inline val @receiver:StringRes Int.text: CharSequence
+  get() = view.context.getText(this)
+
+context(context: Context)
+public inline val @receiver:StringRes Int.string: String
+  get() = ContextCompat.getString(context, this)
+
+context(view: View)
+public inline val @receiver:StringRes Int.string: String
+  get() = ContextCompat.getString(view.context, this)
+
+context(context: Context)
+public inline val @receiver:ColorRes Int.color: Int
+  @ColorInt
+  get() = ContextCompat.getColor(context, this)
+
+context(view: View)
+public inline val @receiver:ColorRes Int.color: Int
+  @ColorInt
+  get() = ContextCompat.getColor(view.context, this)
+
+context(context: Context)
+public inline val @receiver:DrawableRes Int.drawable: Drawable?
+  get() = ContextCompat.getDrawable(context, this)
+
+context(view: View)
+public inline val @receiver:DrawableRes Int.drawable: Drawable?
+  get() = ContextCompat.getDrawable(view.context, this)
+
+context(context: Context)
+public val @receiver:ColorRes Int.states: ColorStateList?
+  get() = ContextCompat.getColorStateList(context, this)
+
+context(view: View)
+public val @receiver:ColorRes Int.states: ColorStateList?
+  get() = ContextCompat.getColorStateList(view.context, this)

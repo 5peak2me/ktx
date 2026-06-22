@@ -1,7 +1,3 @@
-@file:OptIn(ExperimentalAbiValidation::class)
-
-import org.jetbrains.kotlin.gradle.dsl.abi.ExperimentalAbiValidation
-
 /*
  * Copyright © 2023 J!nl!n™ Inc. All rights reserved.
  *
@@ -17,25 +13,19 @@ import org.jetbrains.kotlin.gradle.dsl.abi.ExperimentalAbiValidation
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-plugins {
-  id("java-library")
-  alias(libs.plugins.jetbrains.kotlin.jvm)
-  id("jacoco")
-}
+package com.github.speak2me.ktx.android
 
-java {
-  sourceCompatibility = JavaVersion.VERSION_11
-  targetCompatibility = JavaVersion.VERSION_11
+import org.junit.Assert.assertEquals
+import org.junit.Test
 
-  withSourcesJar()
-}
-
-dependencies {
-  implementation(gradleApi())
-  implementation(project(":libs:jvm"))
-  testImplementation(libs.junit)
-}
-
-kotlin {
-  abiValidation()
+/**
+ * Example local unit test, which will execute on the development machine (host).
+ *
+ * See [testing documentation](http://d.android.com/tools/testing).
+ */
+internal class ExampleUnitTest {
+  @Test
+  fun addition_isCorrect() {
+    assertEquals(4, 2 + 2)
+  }
 }

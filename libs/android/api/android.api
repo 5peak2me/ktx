@@ -1,8 +1,8 @@
-public final class com/github/l3gacy/ktx/android/ActivityKt {
+public final class com/github/speak2me/ktx/android/ActivityKt {
 	public static final fun isSystemInDarkTheme (Landroidx/activity/ComponentActivity;)Lkotlinx/coroutines/flow/Flow;
 }
 
-public final class com/github/l3gacy/ktx/android/ContextKt {
+public final class com/github/speak2me/ktx/android/ContextKt {
 	public static final fun getColor (Landroid/content/Context;I)I
 	public static final fun getColor (Landroid/view/View;I)I
 	public static final fun getDp (Landroid/content/Context;Ljava/lang/Number;)F
@@ -22,7 +22,7 @@ public final class com/github/l3gacy/ktx/android/ContextKt {
 	public static final fun isSystemInDarkTheme (Landroid/content/Context;)Z
 }
 
-public final class com/github/l3gacy/ktx/android/NumberKt {
+public final class com/github/speak2me/ktx/android/NumberKt {
 	public static final fun alpha (IF)I
 	public static final fun getDp (Ljava/lang/Number;)F
 	public static final fun getSp (Ljava/lang/Number;)F

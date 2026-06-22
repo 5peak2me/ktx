@@ -1,7 +1,3 @@
-@file:OptIn(ExperimentalAbiValidation::class)
-
-import org.jetbrains.kotlin.gradle.dsl.abi.ExperimentalAbiValidation
-
 /*
  * Copyright © 2023 J!nl!n™ Inc. All rights reserved.
  *
@@ -17,25 +13,30 @@ import org.jetbrains.kotlin.gradle.dsl.abi.ExperimentalAbiValidation
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-plugins {
-  id("java-library")
-  alias(libs.plugins.jetbrains.kotlin.jvm)
-  id("jacoco")
-}
+package com.github.speak2me.ktx
 
-java {
-  sourceCompatibility = JavaVersion.VERSION_11
-  targetCompatibility = JavaVersion.VERSION_11
+import org.junit.Assert.assertEquals
+import org.junit.Test
 
-  withSourcesJar()
-}
+internal class GenericsTest {
 
-dependencies {
-  implementation(gradleApi())
-  implementation(project(":libs:jvm"))
-  testImplementation(libs.junit)
-}
+  @Test
+  fun `test isNull`() {
+    val str: String? = null
+    assert(str.isNull)
+  }
 
-kotlin {
-  abiValidation()
+  @Test
+  fun `test isNotNull`() {
+    val str = "abc"
+    assert(str.isNotNull)
+  }
+
+  @Test
+  fun `test isNonNull()`() {
+    val str: String? = null
+    if (str.isNonNull()) {
+      assertEquals(str.javaClass, String::class.java)
+    }
+  }
 }

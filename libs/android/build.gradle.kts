@@ -20,7 +20,7 @@ plugins {
 }
 
 android {
-  namespace = "com.gitub.l3gacy.ktx.android"
+  namespace = "com.gitub.speak2me.ktx.android"
   compileSdk = 37
 
   defaultConfig {
