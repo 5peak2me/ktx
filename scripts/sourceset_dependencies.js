@@ -1,1 +1,1 @@
-sourceset_dependencies = '{":libs:gradle/main":[],":libs:jvm/main":[]}'
+sourceset_dependencies = '{":libs:gradle/main":[],":libs:jvm/main":[],":libs:android/release":[]}'
