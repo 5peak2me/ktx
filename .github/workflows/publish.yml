@@ -31,7 +31,7 @@ jobs:
         uses: gradle/actions/setup-gradle@v6.2.0
 
       - name: Run Dokka Task 📚
-        run: ./gradlew dokkaGenerate --stacktrace
+        run: ./gradlew dokkaGenerate --project-prop=artifact_version="${GITHUB_REF_NAME}" --stacktrace
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4.8.0

@@ -34,10 +34,17 @@ dependencies {
   }
 }
 
+dokka {
+  dokkaPublications.html {
+    moduleName.set("ktx")
+    moduleVersion.set(providers.gradleProperty("artifact_version"))
+  }
+}
+
 subprojects {
   if (name != "app") {
     group = "com.github.5peak2me.ktx"
-    version = "0.0.4"
+    version = providers.gradleProperty("artifact_version").get()
 
     plugins.apply("maven-publish")
     plugins.apply("org.jetbrains.dokka")
