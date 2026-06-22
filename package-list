@@ -1,10 +1,8 @@
 $dokka.format:html-v1
 $dokka.linkExtension:html
 
-module:android
-com.github.l3gacy.ktx.android
 module:gradle
-com.github.l3gcay.ktx.gradle
+com.github.speak2me.ktx.gradle
 module:jvm
-com.github.l3gcay.ktx
-com.github.l3gcay.ktx.internal
+com.github.speak2me.ktx
+com.github.speak2me.ktx.internal
