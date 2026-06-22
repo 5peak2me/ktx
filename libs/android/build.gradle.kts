@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+import org.jetbrains.dokka.gradle.engine.parameters.KotlinPlatform
 import org.jetbrains.kotlin.gradle.dsl.abi.ExperimentalAbiValidation
 
 plugins {
@@ -20,7 +21,7 @@ plugins {
 }
 
 android {
-  namespace = "com.gitub.speak2me.ktx.android"
+  namespace = "com.github.speak2me.ktx.android"
   compileSdk = 37
 
   defaultConfig {
@@ -53,6 +54,12 @@ android {
 kotlin {
 //  @OptIn(ExperimentalAbiValidation::class)
 //  abiValidation()
+}
+
+dokka {
+  dokkaSourceSets.register("release") {
+    analysisPlatform.set(KotlinPlatform.AndroidJVM)
+  }
 }
 
 afterEvaluate {

@@ -1,0 +1,12 @@
+.library-name--link {
+  gap: 0.25rem;
+}
+
+.library-version {
+  align-self: flex-start;
+  font-size: 0.7rem;
+  font-weight: 600;
+  line-height: 1;
+  margin-left: 0.25rem;
+  padding-top: 1.35rem;
+}

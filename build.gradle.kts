@@ -13,8 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-@file:OptIn(ExperimentalAbiValidation::class)
+@file:OptIn(ExperimentalAbiValidation::class, InternalDokkaGradlePluginApi::class)
 
+import org.jetbrains.dokka.gradle.engine.plugins.DokkaHtmlPluginParameters
+import org.jetbrains.dokka.gradle.internal.InternalDokkaGradlePluginApi
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 import org.jetbrains.kotlin.gradle.dsl.abi.ExperimentalAbiValidation
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
@@ -38,6 +40,12 @@ dokka {
   dokkaPublications.html {
     moduleName.set("ktx")
     moduleVersion.set(providers.gradleProperty("artifact_version"))
+  }
+
+  pluginsConfiguration {
+    withType<DokkaHtmlPluginParameters>().configureEach {
+      customStyleSheets.from(layout.projectDirectory.file("docs/dokka/styles/ktx-dokka.css"))
+    }
   }
 }
 
