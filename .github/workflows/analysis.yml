@@ -40,5 +40,5 @@ jobs:
       - name: Setup Gradle 🐘
         uses: gradle/actions/setup-gradle@v6.2.0
 
-      - name: binary compatibility
-        run: ./gradlew apiCheck --stacktrace
+      - name: abi validation
+        run: ./gradlew checkKotlinAbi --stacktrace
