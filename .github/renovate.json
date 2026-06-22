@@ -10,7 +10,34 @@
   ],
   "forkProcessing": "enabled",
   "rangeStrategy": "pin",
+  "customManagers": [
+    {
+      "customType": "regex",
+      "managerFilePatterns": [
+        "/(^|/)README\\.md$/"
+      ],
+      "matchStrings": [
+        "com\\.github\\.5peak2me\\.ktx:(?<artifact>jvm|android|gradle):(?<currentValue>\\d+\\.\\d+\\.\\d+)"
+      ],
+      "datasourceTemplate": "maven",
+      "depNameTemplate": "com.github.5peak2me.ktx:{{{artifact}}}",
+      "packageNameTemplate": "com.github.5peak2me.ktx:{{{artifact}}}",
+      "registryUrlTemplate": "https://jitpack.io",
+      "versioningTemplate": "semver"
+    }
+  ],
   "packageRules": [
+    {
+      "matchDatasources": [
+        "maven"
+      ],
+      "matchPackageNames": [
+        "com.github.5peak2me.ktx:jvm",
+        "com.github.5peak2me.ktx:android",
+        "com.github.5peak2me.ktx:gradle"
+      ],
+      "minimumReleaseAge": "0 days"
+    },
     {
       "matchUpdateTypes": [
         "patch",
