@@ -1,5 +1,3 @@
-import org.jetbrains.kotlin.gradle.dsl.abi.ExperimentalAbiValidation
-
 /*
  * Copyright © 2023 J!nl!n™ Inc. All rights reserved.
  *
@@ -15,6 +13,8 @@ import org.jetbrains.kotlin.gradle.dsl.abi.ExperimentalAbiValidation
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+import org.jetbrains.kotlin.gradle.dsl.abi.ExperimentalAbiValidation
+
 plugins {
   alias(libs.plugins.android.library)
 }

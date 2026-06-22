@@ -26,7 +26,7 @@ package com.github.speak2me.ktx.internal
   AnnotationTarget.CLASS,
   AnnotationTarget.FUNCTION,
   AnnotationTarget.TYPEALIAS,
-  AnnotationTarget.PROPERTY
+  AnnotationTarget.PROPERTY,
 )
 @RequiresOptIn(
   level = RequiresOptIn.Level.ERROR,

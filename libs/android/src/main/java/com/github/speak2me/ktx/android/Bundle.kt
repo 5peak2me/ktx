@@ -29,8 +29,7 @@ import java.io.Serializable
  * @param key the key of the value
  * @return the value of the key, or null if no such value was found
  */
-public inline fun <reified T : Serializable> Bundle.serializable(key: String): T? =
-  BundleCompat.getSerializable(this, key, T::class.java)
+public inline fun <reified T : Serializable> Bundle.serializable(key: String): T? = BundleCompat.getSerializable(this, key, T::class.java)
 
 /**
  * Retrieve a Parcelable value from the Bundle using the given key. The
@@ -40,8 +39,7 @@ public inline fun <reified T : Serializable> Bundle.serializable(key: String): T
  * @param key the key of the value
  * @return the value of the key, or null if no such value was found
  */
-public inline fun <reified T : Parcelable> Bundle.parcelable(key: String): T? =
-  BundleCompat.getParcelable(this, key, T::class.java)
+public inline fun <reified T : Parcelable> Bundle.parcelable(key: String): T? = BundleCompat.getParcelable(this, key, T::class.java)
 
 /**
  * Retrieve a Parcelable array from the Bundle using the given key. The
@@ -51,8 +49,7 @@ public inline fun <reified T : Parcelable> Bundle.parcelable(key: String): T? =
  * @param key the key of the value
  * @return the array of the key, or null if no such value was found
  */
-public inline fun <reified T : Parcelable> Bundle.parcelableArray(key: String): Array<T>? =
-  BundleCompat.getParcelableArray(this, key, T::class.java)?.map { it as T }?.toTypedArray()
+public inline fun <reified T : Parcelable> Bundle.parcelableArray(key: String): Array<T>? = BundleCompat.getParcelableArray(this, key, T::class.java)?.map { it as T }?.toTypedArray()
 
 /**
  * Retrieve a Parcelable ArrayList from the Bundle using the given key. The
@@ -62,8 +59,7 @@ public inline fun <reified T : Parcelable> Bundle.parcelableArray(key: String): 
  * @param key the key of the value
  * @return the ArrayList of the key, or null if no such value was found
  */
-public inline fun <reified T : Parcelable> Bundle.parcelableArrayList(key: String): ArrayList<T>? =
-  BundleCompat.getParcelableArrayList(this, key, T::class.java)
+public inline fun <reified T : Parcelable> Bundle.parcelableArrayList(key: String): ArrayList<T>? = BundleCompat.getParcelableArrayList(this, key, T::class.java)
 
 /**
  * Retrieve a SparseArray of Parcelable values from the Bundle using the given key.
@@ -73,5 +69,4 @@ public inline fun <reified T : Parcelable> Bundle.parcelableArrayList(key: Strin
  * @param key the key of the value
  * @return the SparseArray of the key, or null if no such value was found
  */
-public inline fun <reified T : Parcelable> Bundle.sparseParcelableArray(key: String): SparseArray<T>? =
-  BundleCompat.getSparseParcelableArray(this, key, T::class.java)
+public inline fun <reified T : Parcelable> Bundle.sparseParcelableArray(key: String): SparseArray<T>? = BundleCompat.getSparseParcelableArray(this, key, T::class.java)

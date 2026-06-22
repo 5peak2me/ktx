@@ -28,8 +28,7 @@ import java.io.Serializable
  * @param key the key of the extra
  * @return the value of the extra, or null if no such extra was found
  */
-public inline fun <reified T : Serializable> Intent.serializableExtra(key: String): T? =
-  IntentCompat.getSerializableExtra(this, key, T::class.java)
+public inline fun <reified T : Serializable> Intent.serializableExtra(key: String): T? = IntentCompat.getSerializableExtra(this, key, T::class.java)
 
 /**
  * Retrieve an extra from the intent using the given key. The extra should
@@ -38,8 +37,7 @@ public inline fun <reified T : Serializable> Intent.serializableExtra(key: Strin
  * @param key the key of the extra
  * @return the value of the extra, or null if no such extra was found
  */
-public inline fun <reified T : Parcelable> Intent.parcelableExtra(key: String): T? =
-  IntentCompat.getParcelableExtra(this, key, T::class.java)
+public inline fun <reified T : Parcelable> Intent.parcelableExtra(key: String): T? = IntentCompat.getParcelableExtra(this, key, T::class.java)
 
 /**
  * Retrieve a Parcelable array extra from the Intent using the given key. The
@@ -49,8 +47,7 @@ public inline fun <reified T : Parcelable> Intent.parcelableExtra(key: String): 
  * @param key the key of the extra
  * @return the array of the extra, or null if no such extra was found
  */
-public inline fun <reified T : Parcelable> Intent.parcelableArrayExtra(key: String): Array<T>? =
-  IntentCompat.getParcelableArrayExtra(this, key, T::class.java)?.map { it as T }?.toTypedArray()
+public inline fun <reified T : Parcelable> Intent.parcelableArrayExtra(key: String): Array<T>? = IntentCompat.getParcelableArrayExtra(this, key, T::class.java)?.map { it as T }?.toTypedArray()
 
 /**
  * Retrieve an extra from the intent using the given key. The extra should
@@ -60,5 +57,4 @@ public inline fun <reified T : Parcelable> Intent.parcelableArrayExtra(key: Stri
  * @param key the key of the extra
  * @return the value of the extra, or null if no such extra was found
  */
-public inline fun <reified T : Parcelable> Intent.parcelableArrayListExtra(key: String): ArrayList<T>? =
-  IntentCompat.getParcelableArrayListExtra<T>(this, key, T::class.java)
+public inline fun <reified T : Parcelable> Intent.parcelableArrayListExtra(key: String): ArrayList<T>? = IntentCompat.getParcelableArrayListExtra<T>(this, key, T::class.java)
