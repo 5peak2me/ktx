@@ -36,6 +36,14 @@ dependencies {
   testImplementation(libs.junit)
 }
 
+publishing {
+  publications {
+    register("release", MavenPublication::class) {
+      from(components["java"])
+    }
+  }
+}
+
 kotlin {
   abiValidation()
 }
