@@ -1,6 +1,5 @@
-# ktx
+# ktx [![](https://jitpack.io/v/5peak2me/ktx.svg)](https://jitpack.io/#5peak2me/ktx)
 
-[![](https://jitpack.io/v/5peak2me/ktx.svg)](https://jitpack.io/#5peak2me/ktx)
 [![Kotlin](https://img.shields.io/badge/dynamic/toml?url=https://raw.githubusercontent.com/5peak2me/ktx/main/gradle/libs.versions.toml&query=%24.versions.kotlin&label=Kotlin&color=blue&logo=kotlin&logoColor=white)](https://kotlinlang.org)
 [![AGP](https://img.shields.io/badge/dynamic/toml?url=https://raw.githubusercontent.com/5peak2me/ktx/main/gradle/libs.versions.toml&query=%24.versions.agp&label=AGP&color=blue&logo=android&logoColor=white)](https://developer.android.com/build/releases/gradle-plugin)
 [![compileSdk](https://img.shields.io/badge/dynamic/toml?url=https://raw.githubusercontent.com/5peak2me/ktx/main/gradle/libs.versions.toml&query=%24.versions.compileSdk&label=compileSdk&color=green&logo=android&logoColor=white)](https://developer.android.com/guide/)
