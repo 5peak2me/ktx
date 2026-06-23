@@ -4,7 +4,7 @@
 [![AGP](https://img.shields.io/badge/dynamic/toml?url=https://raw.githubusercontent.com/5peak2me/ktx/main/gradle/libs.versions.toml&query=%24.versions.agp&label=AGP&color=blue&logo=android)](https://developer.android.com/build/releases/gradle-plugin)
 [![compileSdk](https://img.shields.io/badge/dynamic/toml?url=https://raw.githubusercontent.com/5peak2me/ktx/main/gradle/libs.versions.toml&query=%24.versions.compileSdk&label=compileSdk&color=green&logo=android)](https://developer.android.com/guide/)
 [![minSdk](https://img.shields.io/badge/dynamic/toml?url=https://raw.githubusercontent.com/5peak2me/ktx/main/gradle/libs.versions.toml&query=%24.versions.minSdk&label=minSdk&color=green&logo=android)](https://developer.android.com/guide/)
-[![Gradle](https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2F5peak2me%2Fktx%2Fmain%2Fgradle%2Fwrapper%2Fgradle-wrapper.properties&search=gradle-%28%5B0-9.%5D%2B%29-%28%3F%3Abin%7Call%29%5C.zip&replace=%241&label=Gradle&color=blue&logo=gradle)](https://gradle.org)
+[![Gradle](https://img.shields.io/badge/dynamic/regex?url=https://raw.githubusercontent.com/5peak2me/ktx/main/gradle/wrapper/gradle-wrapper.properties&search=gradle-([0-9.]%2B)-(?:bin|all).zip&replace=$1&label=Gradle&color=blue&logo=gradle)](https://gradle.org)
 
 Small Kotlin extension libraries for JVM, Android, and Gradle builds.
 
