@@ -12,7 +12,7 @@ Small Kotlin extension libraries for JVM, Android, and Gradle builds.
 
 | Module  | Coordinate                              | Purpose                                                                                           |
 |---------|-----------------------------------------|---------------------------------------------------------------------------------------------------|
-| JVM     | `com.github.5peak2me.ktx:jvm:0.0.5`     | General Kotlin extensions for strings, numbers, collections, booleans, and nullable values.       |
+| JVM     | `com.github.5peak2me.ktx:jvm:0.0.7`     | General Kotlin extensions for strings, numbers, collections, booleans, and nullable values.       |
 | Android | `com.github.5peak2me.ktx:android:0.0.7` | Android extensions for context resources, dimensions, colors, bundles, intents, and theme state.  |
 | Gradle  | `com.github.5peak2me.ktx:gradle:0.0.7`  | Gradle Kotlin DSL helpers for repositories, version catalogs, providers, publishing, and signing. |
 
@@ -34,7 +34,7 @@ Then add the modules you need:
 
 ```kotlin
 dependencies {
-  implementation("com.github.5peak2me.ktx:jvm:0.0.5")
+  implementation("com.github.5peak2me.ktx:jvm:0.0.7")
   implementation("com.github.5peak2me.ktx:android:0.0.7")
   implementation("com.github.5peak2me.ktx:gradle:0.0.7")
 }
@@ -44,7 +44,7 @@ Groovy DSL:
 
 ```groovy
 dependencies {
-  implementation "com.github.5peak2me.ktx:jvm:0.0.5"
+  implementation "com.github.5peak2me.ktx:jvm:0.0.7"
   implementation "com.github.5peak2me.ktx:android:0.0.7"
   implementation "com.github.5peak2me.ktx:gradle:0.0.7"
 }
