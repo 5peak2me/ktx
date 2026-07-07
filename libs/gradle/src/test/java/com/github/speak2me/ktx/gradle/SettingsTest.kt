@@ -58,15 +58,14 @@ internal class SettingsTest {
     assertThat(settings.getLocalProperty("publish.enabled")).isNull()
   }
 
-  private fun settingsWithRootDir(rootDir: File): Settings =
-    Proxy.newProxyInstance(
-      Settings::class.java.classLoader,
-      arrayOf(Settings::class.java),
-    ) { _, method, _ ->
-      when (method.name) {
-        "getRootDir" -> rootDir
-        "toString" -> "Settings(rootDir=$rootDir)"
-        else -> error("${method.name} is not supported by this test settings")
-      }
-    } as Settings
+  private fun settingsWithRootDir(rootDir: File): Settings = Proxy.newProxyInstance(
+    Settings::class.java.classLoader,
+    arrayOf(Settings::class.java),
+  ) { _, method, _ ->
+    when (method.name) {
+      "getRootDir" -> rootDir
+      "toString" -> "Settings(rootDir=$rootDir)"
+      else -> error("${method.name} is not supported by this test settings")
+    }
+  } as Settings
 }

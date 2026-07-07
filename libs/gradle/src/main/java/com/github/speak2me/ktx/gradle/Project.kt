@@ -61,6 +61,6 @@ public fun Project.gradleGeneratedAccessorsClasspath(
     ?.let(urls::add)
 
   return files(
-    urls.map { Paths.get(it.toURI()).toFile() }
+    urls.map { Paths.get(it.toURI()).toFile() },
   )
 }
