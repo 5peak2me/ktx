@@ -5,7 +5,9 @@ public final class com/github/speak2me/ktx/gradle/InternalKt {
 public final class com/github/speak2me/ktx/gradle/ProjectKt {
 	public static final fun getGradlePublishing (Lorg/gradle/api/Project;)Lorg/gradle/api/publish/PublishingExtension;
 	public static final fun getGradleSigning (Lorg/gradle/api/Project;)Lorg/gradle/plugins/signing/SigningExtension;
-	public static final fun getLibs (Lorg/gradle/api/Project;)Lorg/gradle/api/artifacts/VersionCatalog;
+	public static final fun getLibs (Lorg/gradle/api/Project;)Lorg/gradle/accessors/dm/LibrariesForLibs;
+	public static final fun getVersionCatalogs (Lorg/gradle/api/Project;)Lorg/gradle/api/artifacts/VersionCatalogsExtension;
+	public static final fun gradleGeneratedAccessorsClasspath (Lorg/gradle/api/Project;Ljava/lang/Object;[Ljava/lang/Object;)Lorg/gradle/api/file/FileCollection;
 }
 
 public final class com/github/speak2me/ktx/gradle/ProviderKt {
@@ -24,5 +26,9 @@ public final class com/github/speak2me/ktx/gradle/RepositoryHandlerKt {
 	public static synthetic fun jitpack$default (Lorg/gradle/api/artifacts/dsl/RepositoryHandler;Lkotlin/jvm/functions/Function1;ILjava/lang/Object;)Lorg/gradle/api/artifacts/repositories/MavenArtifactRepository;
 	public static final fun tencent (Lorg/gradle/api/artifacts/dsl/RepositoryHandler;Lkotlin/jvm/functions/Function1;)Lorg/gradle/api/artifacts/repositories/MavenArtifactRepository;
 	public static synthetic fun tencent$default (Lorg/gradle/api/artifacts/dsl/RepositoryHandler;Lkotlin/jvm/functions/Function1;ILjava/lang/Object;)Lorg/gradle/api/artifacts/repositories/MavenArtifactRepository;
+}
+
+public final class com/github/speak2me/ktx/gradle/SettingsKt {
+	public static final fun getLocalProperty (Lorg/gradle/api/initialization/Settings;Ljava/lang/String;)Ljava/lang/String;
 }
 
