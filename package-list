@@ -3,6 +3,8 @@ $dokka.linkExtension:html
 
 module:android
 com.github.speak2me.ktx.android
+module:compose
+com.github.speak2me.ktx.compose
 module:gradle
 com.github.speak2me.ktx.gradle
 module:jvm

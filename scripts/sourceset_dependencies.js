@@ -1,1 +1,1 @@
-sourceset_dependencies = '{":libs:gradle/main":[],":libs:jvm/main":[],":libs:android/release":[]}'
+sourceset_dependencies = '{":libs:gradle/main":[],":libs:jvm/main":[],":libs:compose/androidMain":[":libs:compose/commonMain"],":libs:compose/appleMain":[":libs:compose/nativeMain"],":libs:compose/commonMain":[],":libs:compose/iosArm64Main":[":libs:compose/iosMain"],":libs:compose/iosMain":[":libs:compose/appleMain"],":libs:compose/iosSimulatorArm64Main":[":libs:compose/iosMain"],":libs:compose/nativeMain":[":libs:compose/commonMain"],":libs:android/release":[]}'
