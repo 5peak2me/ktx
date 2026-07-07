@@ -6,15 +6,16 @@
 [![minSdk](https://img.shields.io/badge/dynamic/toml?url=https://raw.githubusercontent.com/5peak2me/ktx/main/gradle/libs.versions.toml&query=$.versions.minSdk&label=minSdk&color=green&logo=android)](https://developer.android.com/guide/)
 [![Gradle](https://img.shields.io/badge/dynamic/regex?url=https://raw.githubusercontent.com/5peak2me/ktx/main/gradle/wrapper/gradle-wrapper.properties&search=gradle-([0-9.]%2B)-(?:bin|all).zip&replace=$1&label=Gradle&color=blue&logo=gradle)](https://gradle.org)
 
-Small Kotlin extension libraries for JVM, Android, and Gradle builds.
+Small Kotlin extension libraries for JVM, Android, Compose, and Gradle builds.
 
 ## Modules
 
-| Module  | Coordinate                              | Purpose                                                                                           |
-|---------|-----------------------------------------|---------------------------------------------------------------------------------------------------|
-| JVM     | `com.github.5peak2me.ktx:jvm:0.0.7`     | General Kotlin extensions for strings, numbers, collections, booleans, and nullable values.       |
-| Android | `com.github.5peak2me.ktx:android:0.0.7` | Android extensions for context resources, dimensions, colors, bundles, intents, and theme state.  |
-| Gradle  | `com.github.5peak2me.ktx:gradle:0.0.7`  | Gradle Kotlin DSL helpers for repositories, version catalogs, providers, publishing, and signing. |
+| Module  | Platform                  | Coordinate                              | Purpose                                                                                           |
+|---------|---------------------------|-----------------------------------------|---------------------------------------------------------------------------------------------------|
+| JVM     | JVM                       | `com.github.5peak2me.ktx:jvm:0.0.7`     | General Kotlin extensions for strings, numbers, collections, booleans, and nullable values.       |
+| Android | Android                   | `com.github.5peak2me.ktx:android:0.0.7` | Android extensions for context resources, dimensions, colors, bundles, intents, and theme state.  |
+| Compose | Compose Multiplatform     | `com.github.5peak2me.ktx:compose:0.0.7` | Compose Multiplatform helpers for modifiers, interactions, dividers, gradients, and Paging lists. |
+| Gradle  | Gradle                    | `com.github.5peak2me.ktx:gradle:0.0.7`  | Gradle Kotlin DSL helpers for repositories, version catalogs, providers, publishing, and signing. |
 
 ## Installation
 
@@ -36,6 +37,7 @@ Then add the modules you need:
 dependencies {
   implementation("com.github.5peak2me.ktx:jvm:0.0.7")
   implementation("com.github.5peak2me.ktx:android:0.0.7")
+  implementation("com.github.5peak2me.ktx:compose:0.0.7")
   implementation("com.github.5peak2me.ktx:gradle:0.0.7")
 }
 ```
@@ -46,6 +48,7 @@ Groovy DSL:
 dependencies {
   implementation "com.github.5peak2me.ktx:jvm:0.0.7"
   implementation "com.github.5peak2me.ktx:android:0.0.7"
+  implementation "com.github.5peak2me.ktx:compose:0.0.7"
   implementation "com.github.5peak2me.ktx:gradle:0.0.7"
 }
 ```
