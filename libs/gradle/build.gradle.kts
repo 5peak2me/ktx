@@ -15,6 +15,7 @@
  */
 @file:OptIn(ExperimentalAbiValidation::class)
 
+import org.gradle.api.tasks.testing.Test
 import org.jetbrains.kotlin.gradle.dsl.abi.ExperimentalAbiValidation
 
 plugins {
@@ -31,9 +32,12 @@ java {
 }
 
 dependencies {
+  // https://stackoverflow.com/questions/76713758/use-version-catalog-inside-precompiled-gradle-plugin
+  implementation(files((libs).javaClass.superclass.protectionDomain.codeSource.location))
   implementation(gradleApi())
   implementation(project(":libs:jvm"))
   testImplementation(libs.junit)
+  testImplementation(libs.truth)
 }
 
 publishing {
@@ -44,6 +48,13 @@ publishing {
   }
 }
 
+tasks.withType<Test>().configureEach {
+  jvmArgs("--add-opens=java.base/java.lang=ALL-UNNAMED")
+}
+
 kotlin {
   abiValidation()
+  compilerOptions {
+    freeCompilerArgs.add("-Xcontext-parameters")
+  }
 }

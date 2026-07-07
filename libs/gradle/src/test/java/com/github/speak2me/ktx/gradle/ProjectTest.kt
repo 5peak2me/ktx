@@ -15,12 +15,14 @@
  */
 package com.github.speak2me.ktx.gradle
 
+import com.google.common.truth.Truth.assertThat
 import junit.framework.TestCase.assertTrue
 import org.gradle.api.artifacts.VersionCatalogsExtension
 import org.gradle.api.publish.PublishingExtension
 import org.gradle.plugins.signing.SigningExtension
 import org.gradle.testfixtures.ProjectBuilder
 import org.junit.Test
+import java.nio.file.Paths
 
 internal class ProjectTest {
 
@@ -50,4 +52,50 @@ internal class ProjectTest {
 
     assertTrue(project.extensions.findByType(PublishingExtension::class.java) == project.gradlePublishing)
   }
+
+  @Test
+  fun `gradleGeneratedAccessorsClasspath includes catalog accessor superclass classpath`() {
+    val project = ProjectBuilder.builder().build()
+    val expectedFile = Paths.get(
+      GeneratedAccessorBase::class.java.protectionDomain.codeSource.location.toURI(),
+    ).toFile()
+
+    val classpath = project.gradleGeneratedAccessorsClasspath(
+      script = "",
+      CatalogAccessor(),
+    )
+
+    assertThat(classpath.files).containsExactly(expectedFile)
+  }
+
+  @Test
+  fun `gradleGeneratedAccessorsClasspath removes duplicate accessor classpaths`() {
+    val project = ProjectBuilder.builder().build()
+    val expectedFile = Paths.get(
+      GeneratedAccessorBase::class.java.protectionDomain.codeSource.location.toURI(),
+    ).toFile()
+
+    val classpath = project.gradleGeneratedAccessorsClasspath(
+      script = "",
+      CatalogAccessor(),
+      AnotherCatalogAccessor(),
+    )
+
+    assertThat(classpath.files).containsExactly(expectedFile)
+  }
+
+  @Test
+  fun `gradleGeneratedAccessorsClasspath is empty without generated accessor locations`() {
+    val project = ProjectBuilder.builder().build()
+
+    val classpath = project.gradleGeneratedAccessorsClasspath(script = "")
+
+    assertThat(classpath.files).isEmpty()
+  }
+
+  private open class GeneratedAccessorBase
+
+  private class CatalogAccessor : GeneratedAccessorBase()
+
+  private class AnotherCatalogAccessor : GeneratedAccessorBase()
 }

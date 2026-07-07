@@ -15,17 +15,52 @@
  */
 package com.github.speak2me.ktx.gradle
 
+import org.gradle.accessors.dm.LibrariesForLibs
 import org.gradle.api.Project
-import org.gradle.api.artifacts.VersionCatalog
 import org.gradle.api.artifacts.VersionCatalogsExtension
+import org.gradle.api.file.FileCollection
 import org.gradle.api.publish.PublishingExtension
 import org.gradle.plugins.signing.SigningExtension
+import java.net.URL
+import java.nio.file.Paths
 
-public inline val Project.libs: VersionCatalog
-  get() = extensions.getByType(VersionCatalogsExtension::class.java).named("libs")
+public inline val Project.libs: LibrariesForLibs
+  get() = extensions.getByType(LibrariesForLibs::class.java)
+
+public inline val Project.versionCatalogs: VersionCatalogsExtension
+  get() = extensions.getByType(VersionCatalogsExtension::class.java)
 
 public inline val Project.gradleSigning: SigningExtension
   get() = extensions.getByType(SigningExtension::class.java)
 
 public inline val Project.gradlePublishing: PublishingExtension
   get() = extensions.getByType(PublishingExtension::class.java)
+
+public fun Project.gradleGeneratedAccessorsClasspath(
+  script: Any,
+  vararg catalogAccessors: Any,
+): FileCollection {
+  val urls = linkedSetOf<URL>()
+
+  catalogAccessors.forEach { accessor ->
+    accessor.javaClass.superclass
+      ?.protectionDomain
+      ?.codeSource
+      ?.location
+      ?.let(urls::add)
+  }
+
+  val scriptClassLoader = script.javaClass.classLoader
+
+  runCatching {
+    scriptClassLoader.loadClass("org.gradle.kotlin.dsl.ImplementationConfigurationAccessorsKt")
+  }.getOrNull()
+    ?.protectionDomain
+    ?.codeSource
+    ?.location
+    ?.let(urls::add)
+
+  return files(
+    urls.map { Paths.get(it.toURI()).toFile() }
+  )
+}
