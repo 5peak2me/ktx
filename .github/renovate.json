@@ -1,6 +1,7 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "minimumReleaseAge": "1 month",
+  "prCreation": "immediate",
   "dependencyDashboard": true,
   "extends": [
     "group:monorepos",
@@ -17,7 +18,7 @@
         "/(^|/)README\\.md$/"
       ],
       "matchStrings": [
-        "com\\.github\\.5peak2me\\.ktx:(?<artifact>jvm|android|gradle):(?<currentValue>\\d+\\.\\d+\\.\\d+)"
+        "com\\.github\\.5peak2me\\.ktx:(?<artifact>android|compose|gradle|jvm):(?<currentValue>\\d+\\.\\d+\\.\\d+)"
       ],
       "datasourceTemplate": "maven",
       "depNameTemplate": "com.github.5peak2me.ktx:{{{artifact}}}",
@@ -32,11 +33,13 @@
         "maven"
       ],
       "matchPackageNames": [
-        "com.github.5peak2me.ktx:jvm",
         "com.github.5peak2me.ktx:android",
-        "com.github.5peak2me.ktx:gradle"
+        "com.github.5peak2me.ktx:compose",
+        "com.github.5peak2me.ktx:gradle",
+        "com.github.5peak2me.ktx:jvm"
       ],
-      "minimumReleaseAge": "0 days"
+      "minimumReleaseAge": "0 days",
+      "schedule": null
     },
     {
       "matchUpdateTypes": [
