@@ -12,7 +12,7 @@ Small Kotlin extension libraries for JVM, Android, Compose, and Gradle builds.
 
 | Module  | Platform                  | Coordinate                              | Purpose                                                                                           |
 |---------|---------------------------|-----------------------------------------|---------------------------------------------------------------------------------------------------|
-| JVM     | JVM                       | `com.github.5peak2me.ktx:jvm:0.0.7`     | General Kotlin extensions for strings, numbers, collections, booleans, and nullable values.       |
+| JVM     | JVM                       | `com.github.5peak2me.ktx:jvm:0.0.8`     | General Kotlin extensions for strings, numbers, collections, booleans, and nullable values.       |
 | Android | Android                   | `com.github.5peak2me.ktx:android:0.0.8` | Android extensions for context resources, dimensions, colors, bundles, intents, and theme state.  |
 | Compose | Compose Multiplatform     | `com.github.5peak2me.ktx:compose:0.0.8` | Compose Multiplatform helpers for modifiers, interactions, dividers, gradients, and Paging lists. |
 | Gradle  | Gradle                    | `com.github.5peak2me.ktx:gradle:0.0.8`  | Gradle Kotlin DSL helpers for repositories, version catalogs, providers, publishing, and signing. |
@@ -35,7 +35,7 @@ Then add the modules you need:
 
 ```kotlin
 dependencies {
-  implementation("com.github.5peak2me.ktx:jvm:0.0.7")
+  implementation("com.github.5peak2me.ktx:jvm:0.0.8")
   implementation("com.github.5peak2me.ktx:android:0.0.8")
   implementation("com.github.5peak2me.ktx:compose:0.0.8")
   implementation("com.github.5peak2me.ktx:gradle:0.0.8")
@@ -46,7 +46,7 @@ Groovy DSL:
 
 ```groovy
 dependencies {
-  implementation "com.github.5peak2me.ktx:jvm:0.0.7"
+  implementation "com.github.5peak2me.ktx:jvm:0.0.8"
   implementation "com.github.5peak2me.ktx:android:0.0.8"
   implementation "com.github.5peak2me.ktx:compose:0.0.8"
   implementation "com.github.5peak2me.ktx:gradle:0.0.8"
